@@ -1,0 +1,34 @@
+@tailwind base;
+
+/* Write your own custom base styles here */
+@font-face {
+  font-family: Ubuntu;
+  font-weight: 500;
+  src: url(/assets/fonts/Ubuntu-Medium.ttf) format('ttf');
+}
+@font-face {
+  font-family: Ubuntu;
+  font-weight: 700;
+  src: url(/assets/fonts/Ubuntu-Bold.ttf) format('ttf');
+}
+@font-face {
+  font-family: Ubuntu Mono;
+  font-weight: 400;
+  src: url(/assets/fonts/UbuntuMono-Regular.ttf) format('ttf');
+}
+@font-face {
+  font-family: Ubuntu Mono;
+  font-weight: 700;
+  src: url(/assets/fonts/UbuntuMono-Bold.ttf) format('ttf');
+}
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Write you own custom component styles here */
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */

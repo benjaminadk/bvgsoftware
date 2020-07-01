@@ -1,0 +1,14 @@
+# VS Code config
+.vscode
+
+# Environment variables
+.env
+
+# Now config
+.now
+
+# NextJs files
+.next
+
+# Dependencies
+node_modules
