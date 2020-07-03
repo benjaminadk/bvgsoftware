@@ -5,6 +5,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: {
+          100: '',
+          200: '#ecfffe',
+          300: '',
+          400: '',
+          500: defaultTheme.colors.teal[500],
+          600: defaultTheme.colors.teal[600],
+          700: '',
+          800: '',
+          900: ''
+        },
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
         'accent-7': '#333',

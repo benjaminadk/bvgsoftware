@@ -2,11 +2,23 @@
   @apply text-lg leading-relaxed;
 }
 
+.markdown a {
+  @apply text-primary-500;
+}
+
+.markdown a:hover {
+  @apply text-primary-600;
+}
+
 .markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
   @apply my-6;
+}
+
+.markdown p {
+  @apply text-justify;
 }
 
 .markdown h2 {
@@ -15,4 +27,9 @@
 
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
+}
+
+.markdown p > code,
+.markdown li > code {
+  @apply text-gray-800 bg-gray-200 px-1 rounded-sm text-sm;
 }
