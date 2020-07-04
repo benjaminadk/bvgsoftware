@@ -1,6 +1,6 @@
 ---
 title: 'Save Development Time With AutoHotKey'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.'
+excerpt: 'As developers, we often find ourselves creating forms that require user input. Learn how to save valuable time by use AutoHotKey in your testing and validation process.'
 coverImage: '/assets/blog/autohotkey-to-save-development-time/cover.jpg'
 date: '2019-08-02T05:35:07.322Z'
 author:

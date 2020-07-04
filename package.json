@@ -15,6 +15,7 @@
     "gray-matter": "4.0.2",
     "hast-util-to-string": "1.0.3",
     "next": "latest",
+    "next-videos": "1.1.4",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "refractor": "3.0.0",

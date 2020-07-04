@@ -89,7 +89,8 @@ pre[class*='language-'] code {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #6f705e;
+  color: #b5b5b5;
+  font-style: italic;
 }
 
 .token.operator,

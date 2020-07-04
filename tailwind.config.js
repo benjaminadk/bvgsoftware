@@ -36,6 +36,9 @@ module.exports = {
         mono: ['"Ubuntu Mono"', ...defaultTheme.fontFamily.mono]
       },
       fontSize: {
+        '2xl': '1.5rem',
+        '3xl': '1.875rem',
+        '4xl': '2.25rem',
         '5xl': '2.5rem',
         '6xl': '2.75rem',
         '7xl': '4.5rem',
@@ -44,6 +47,9 @@ module.exports = {
       boxShadow: {
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',
         medium: '0 8px 30px rgba(0, 0, 0, 0.12)'
+      },
+      top: {
+        '50': '50px'
       }
     }
   }
