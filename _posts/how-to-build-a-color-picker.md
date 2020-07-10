@@ -6,13 +6,17 @@ date: '2019-08-12T05:35:07.322Z'
 author:
   name: BVG Software
   picture: '/assets/blog/authors/bvg.jpg'
-ogImage:
-  url: '/assets/blog/how-to-build-a-color-picker/cover.jpg'
 ---
 
 Building a color picker was one of the first projects I tried my hand at once I knew how to string together a couple lines of JavaScript. They were total abombinations if my memory serves me correctly. Recently, I decided to see what my current skills could produce. This article will cover the step by step process. The target audience for the article probably has some experience with React, but by no means does it require expert ability. I will do by best to keep a slow pace and explain the thinking behind component composition and how the pieces fit together.
 
-<iframe src="https://codesandbox.io/embed/color-picker-v6oo1?fontsize=14" title="Color Picker" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<iframe
+     src="https://codesandbox.io/embed/color-picker-v6oo1?autoresize=1&codemirror=1&fontsize=12&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Color Picker"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-autoplay allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 
 ## Getting Started
 

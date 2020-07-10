@@ -1,13 +1,15 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
+import Head from 'next/head'
+
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
-import Head from 'next/head'
+import { getPostBySlug, getAllPosts } from '../../lib/api'
+import { blogPosting } from '../../lib/schemaHelpers'
 import { SITE_NAME } from '../../lib/constants'
 
 export default function Post({ post, morePosts, preview }) {
@@ -28,7 +30,31 @@ export default function Post({ post, morePosts, preview }) {
                 <title>
                   {post.title} | {SITE_NAME}
                 </title>
-                <meta property='og:image' content={post.ogImage.url} />
+                <meta
+                  key={post.slug}
+                  property='description'
+                  content={post.excerpt}
+                />
+
+                <meta key={post.slug} property='og:type' content='article' />
+                <meta
+                  key={post.slug}
+                  property='og:description'
+                  content={post.excerpt}
+                />
+
+                <meta
+                  key={post.slug}
+                  property='og:image'
+                  content={post.coverImage}
+                />
+                <script
+                  key={post.slug}
+                  type='application/ld+json'
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(blogPosting(post))
+                  }}
+                />
               </Head>
               <PostHeader
                 title={post.title}
@@ -52,7 +78,6 @@ export async function getStaticProps({ params }) {
     'slug',
     'author',
     'content',
-    'ogImage',
     'coverImage'
   ])
 

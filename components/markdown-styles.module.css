@@ -37,3 +37,7 @@
 .markdown iframe {
   @apply shadow-md;
 }
+
+.markdown img {
+  @apply shadow-md;
+}

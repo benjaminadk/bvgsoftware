@@ -17,8 +17,8 @@ export default function Index({ allPosts }) {
         <Head>
           <title>{SITE_NAME} | Home</title>
         </Head>
+        <LandingVideo />
         <Container>
-          <LandingVideo />
           {recentPosts.length > 0 && <MoreStories posts={recentPosts} />}
         </Container>
       </Layout>

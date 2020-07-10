@@ -1,9 +1,12 @@
 import Link from 'next/link'
+import cn from 'classnames'
 import { NAV_ITEMS } from '../lib/constants'
 
 export default function Navigation() {
+  const [showMenu, setShowMenu] = React.useState(false)
+
   return (
-    <nav className='flex items-center justify-between flex-wrap bg-white p-6'>
+    <nav className='fixed inset-x-0 top-0 z-10 flex items-center justify-between flex-wrap bg-white p-6'>
       <Link href='/'>
         <div className='flex items-center flex-shrink-0 text-black cursor-pointer mr-6'>
           <svg
@@ -21,7 +24,10 @@ export default function Navigation() {
         </div>
       </Link>
       <div className='block lg:hidden'>
-        <button className='flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white'>
+        <button
+          onClick={() => setShowMenu((cur) => !cur)}
+          className='flex items-center px-3 py-2 border rounded text-black border-black hover:text-blue-500 hover:border-blue-500'
+        >
           <svg
             className='fill-current h-3 w-3'
             viewBox='0 0 20 20'
@@ -32,11 +38,15 @@ export default function Navigation() {
           </svg>
         </button>
       </div>
-      <div className='w-full block flex-grow lg:flex lg:items-center lg:w-auto'>
+      <div
+        className={cn('w-full flex-grow lg:flex lg:items-center lg:w-auto', {
+          hidden: !showMenu
+        })}
+      >
         <div className='text-sm lg:flex-grow'>
           {NAV_ITEMS.map((link) => (
             <Link key={link.slug} href={link.slug}>
-              <a className='block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-blue-500 mr-4'>
+              <a className='block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 mr-4'>
                 {link.text}
               </a>
             </Link>

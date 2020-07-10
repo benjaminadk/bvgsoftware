@@ -1,73 +1,13 @@
-# A statically generated blog example using Next.js and Markdown
+# BVG Software Website
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using markdown files as the data source.
+## Blog Posts
 
-The blog posts are stored in `/_posts` as markdown files with front matter support. Adding a new markdown file in there will create a new blog post.
-
-To create the blog posts we use [`remark`](https://github.com/remarkjs/remark) and [`remark-html`](https://github.com/remarkjs/remark-html) to convert the markdown files into an HTML string, and then send it down as a prop to the page. The metadata of every post is handled by [`gray-matter`](https://github.com/jonschlinkert/gray-matter) and also sent in props to the page.
-
-## Demo
-
-[https://next-blog-starter.now.sh/](https://next-blog-starter.now.sh/)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?c=1&s=https://github.com/vercel/next.js/tree/canary/examples/blog-starter)
-
-### Related examples
-
-- [WordPress](/examples/cms-wordpress)
-- [DatoCMS](/examples/cms-datocms)
-- [Sanity](/examples/cms-sanity)
-- [TakeShape](/examples/cms-takeshape)
-- [Prismic](/examples/cms-prismic)
-- [Contentful](/examples/cms-contentful)
-- [Strapi](/examples/cms-strapi)
-- [Agility CMS](/examples/cms-agilitycms)
-- [Cosmic](/examples/cms-cosmic)
-- [ButterCMS](/examples/cms-buttercms)
-- [Storyblok](/examples/cms-storyblok)
-- [GraphCMS](/examples/cms-graphcms)
-
-## How to use
-
-### Using `create-next-app`
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example blog-starter blog-starter-app
-# or
-yarn create next-app --example blog-starter blog-starter-app
-```
-
-### Download manually
-
-Download the example:
-
-```bash
-curl https://codeload.github.com/vercel/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/blog-starter
-cd blog-starter
-```
-
-Install dependencies and run the example:
-
-```bash
-npm install
-npm run dev
-
-# or
-
-yarn install
-yarn dev
-```
-
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
-
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-# Notes
-
-This blog-starter uses [Tailwind CSS](https://tailwindcss.com). To control the generated stylesheet's filesize, this example uses Tailwind CSS' v1.4 [`purge` option](https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css) to remove unused CSS.
+| Date       | Title                                             |                                           Link                                            |
+| :--------- | :------------------------------------------------ | :---------------------------------------------------------------------------------------: |
+| 2019-07-10 | SVG Icons With No Artistic Ability                |        [Link](https://benjaminbrooke.me/posts/svg-icons-with-no-artistic-ability/)        |
+| 2019-08-02 | Save Time With Auto Hotkey                        |            [Link](https://benjaminbrooke.me/posts/save-time-with-auto-hotkey/)            |
+| 2019-08-12 | How To Build A Color Picker With React            |               [Link](https://benjaminbrooke.me/how-to-build-a-color-picker)               |
+| 2019-08-16 | How To Use Local Storage To Persist Data          |        [Link](https://benjaminbrooke.me/posts/using-local-storage-to-persist-data)        |
+| 2019-08-24 | Encode GIFs With Node                             |               [Link](https://benjaminbrooke.me/posts/encode-gifs-with-node)               |
+| 2019-09-01 | React Form Validation With GraphQl + Formik + Yup | [Link](https://benjaminbrooke.me/posts/react-form-validation-with-graphql-formik-and-yup) |
+| 2020-01-25 | Build A Command Line Application                  |             [Link](https://benjaminbrooke.me/posts/build-a-command-line-app)              |

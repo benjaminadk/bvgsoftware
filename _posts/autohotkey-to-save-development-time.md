@@ -6,8 +6,6 @@ date: '2019-08-02T05:35:07.322Z'
 author:
   name: BVG Software
   picture: '/assets/blog/authors/bvg.jpg'
-ogImage:
-  url: '/assets/blog/autohotkey-to-save-development-time/cover.jpg'
 ---
 
 As a developer, have you ever been pushed to the brink of your sanity by having to re-enter form data each time you change a small detail of your application source code? I know I have. If you are a developer using Windows this post has some good news for you. [AutoHotKey](https://www.autohotkey.com/) can save you a lot of time and help reduce the brain 🤯 pain associated with tedious data entry.

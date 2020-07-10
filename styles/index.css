@@ -1,5 +1,6 @@
 @tailwind base;
 
+/* Fonts */
 @font-face {
   font-family: Ubuntu;
   font-weight: 500;
@@ -21,6 +22,55 @@
   src: url(/assets/fonts/UbuntuMono-Bold.ttf) format('ttf');
 }
 
+#landing-video-wrapper {
+  position: relative;
+  height: calc(100vh);
+  display: grid;
+  place-items: center center;
+}
+
+#landing-video {
+  display: block;
+  width: 66%;
+  clip-path: url(#clip-00);
+}
+
+svg.clipping-paths {
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* Table Styles */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 1rem;
+  margin: auto;
+  margin-bottom: 25px;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+table th {
+  background-color: #fff;
+  padding: 4px 8px;
+}
+
+table td {
+  padding: 4px 8px;
+}
+
+table tr {
+  background-color: #fff;
+}
+
+table tr:nth-child(odd) {
+  background-color: #edf2f7;
+}
+
+/* Filename before code */
 .filename {
   font-family: 'Ubuntu Mono', monospace;
   border: 1px solid #2a2a2a;
@@ -48,6 +98,8 @@ pre[class*='language-'] {
   font-size: 14px;
   color: #76d9e6;
   text-shadow: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 pre > code[class*='language-'] {

@@ -52,5 +52,6 @@ module.exports = {
         '50': '50px'
       }
     }
-  }
+  },
+  plugins: [require('tailwindcss-debug-screens')]
 }

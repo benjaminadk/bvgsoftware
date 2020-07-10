@@ -6,8 +6,6 @@ date: '2019-07-10T05:35:07.322Z'
 author:
   name: BVG Software
   picture: '/assets/blog/authors/bvg.jpg'
-ogImage:
-  url: '/assets/blog/svg-icon-with-no-artistic-ability/cover.jpg'
 ---
 
 Are you sick of the icons you have been using in your projects lately? Do you lack the artistic ability to draw a stick figure? If you answered yes (or no), please continue reading.
