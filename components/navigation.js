@@ -46,7 +46,7 @@ export default function Navigation() {
         <div className='text-sm lg:flex-grow'>
           {NAV_ITEMS.map((link) => (
             <Link key={link.slug} href={link.slug}>
-              <a className='block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 mr-4'>
+              <a className='block mt-4 lg:inline-block lg:mt-0 text-black mr-4'>
                 {link.text}
               </a>
             </Link>
@@ -55,7 +55,7 @@ export default function Navigation() {
         <div>
           <a
             href='#'
-            className='inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0'
+            className='inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black mt-4 lg:mt-0'
           >
             Download
           </a>
