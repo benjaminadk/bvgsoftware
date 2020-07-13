@@ -14,7 +14,7 @@ export default function Index({ allPosts }) {
     <>
       <Layout>
         <Head>
-          <title>{SITE_NAME} | Home</title>
+          <title>Web Developer Blog | {SITE_NAME}</title>
         </Head>
         <Container>
           <Intro />

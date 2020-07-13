@@ -10,23 +10,31 @@ export default function Navigation() {
       <Link href='/'>
         <div className='flex items-center flex-shrink-0 text-black cursor-pointer mr-6'>
           <svg
-            className='fill-current h-8 w-8 mr-2'
-            width='54'
-            height='54'
-            viewBox='0 0 54 54'
             xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 500 500'
+            className='fill-current h-8 w-8 mr-2'
           >
-            <path d='M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z' />
+            <circle
+              cx='248.2'
+              cy='245.9'
+              r='220.9'
+              fill='#fff'
+              stroke='#000'
+              strokeWidth='15'
+            />
+            <path
+              d='M212.5 352.9l-.3-92.6-62.8.2 104.5-138.8 105.4 138.1-62.8.2.3 92.6-84.3.3z'
+              stroke='#000'
+            />
           </svg>
-          <span className='font-semibold text-xl tracking-tight'>
-            BVG Software
-          </span>
+
+          <span className='font-bold text-xl tracking-tight'>BVG Software</span>
         </div>
       </Link>
       <div className='block lg:hidden'>
         <button
           onClick={() => setShowMenu((cur) => !cur)}
-          className='flex items-center px-3 py-2 border rounded text-black border-black hover:text-blue-500 hover:border-blue-500'
+          className='flex items-center px-3 py-2 border rounded text-black border-black'
         >
           <svg
             className='fill-current h-3 w-3'
@@ -46,19 +54,11 @@ export default function Navigation() {
         <div className='text-sm lg:flex-grow'>
           {NAV_ITEMS.map((link) => (
             <Link key={link.slug} href={link.slug}>
-              <a className='block mt-4 lg:inline-block lg:mt-0 text-black mr-4'>
+              <a className='block mt-4 lg:inline-block lg:mt-0 text-black font-bold mr-4'>
                 {link.text}
               </a>
             </Link>
           ))}
-        </div>
-        <div>
-          <a
-            href='#'
-            className='inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black mt-4 lg:mt-0'
-          >
-            Download
-          </a>
         </div>
       </div>
     </nav>
