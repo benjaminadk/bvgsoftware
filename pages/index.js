@@ -3,36 +3,30 @@ import Head from 'next/head'
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import Layout from '../components/layout'
-import TopBar from '../components/topbar'
 import BvgVideo from '../components/bvg-video'
 import Klaviyo from '../components/klaviyo'
 import { getAllPosts } from '../lib/api'
 import { SITE_NAME } from '../lib/constants'
 
+const cards = [
+  { title: 'Mobile Applications', src: 'mobile.jpg' },
+  { title: 'Website Development', src: 'development.jpg' },
+  { title: 'Domain & Deployment', src: 'deployment.jpg' }
+]
+
 function Cards() {
   return (
     <div className='grid grid-cols-3 my-20'>
-      <div className='flex justify-center'>
-        <img
-          className='w-6/12'
-          src='/assets/front/programmer.jpg'
-          alt='Programmer'
-        />
-      </div>
-      <div className='flex justify-center'>
-        <img
-          className='w-6/12'
-          src='/assets/front/programmer.jpg'
-          alt='Programmer'
-        />
-      </div>
-      <div className='flex justify-center'>
-        <img
-          className='w-6/12'
-          src='/assets/front/programmer.jpg'
-          alt='Programmer'
-        />
-      </div>
+      {cards.map((el) => (
+        <div key={el.title} className='flex flex-col items-center'>
+          <img
+            className='w-6/12'
+            src={`/assets/front/${el.src}`}
+            alt={el.title}
+          />
+          <h3 className='text-xl font-bold'>{el.title}</h3>
+        </div>
+      ))}
     </div>
   )
 }
@@ -46,7 +40,6 @@ export default function Index({ allPosts }) {
         <Head>
           <title>{SITE_NAME} | Home</title>
         </Head>
-        <TopBar />
         <BvgVideo />
         <Klaviyo version='embed' />
         <Cards />

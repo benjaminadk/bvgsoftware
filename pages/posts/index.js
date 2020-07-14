@@ -1,9 +1,11 @@
 import Head from 'next/head'
+
+import Layout from '../../components/layout'
+import Alert from '../../components/alert'
 import Container from '../../components/container'
 import MoreStories from '../../components/more-stories'
 import HeroPost from '../../components/hero-post'
 import Intro from '../../components/intro'
-import Layout from '../../components/layout'
 import { getAllPosts } from '../../lib/api'
 import { SITE_NAME } from '../../lib/constants'
 

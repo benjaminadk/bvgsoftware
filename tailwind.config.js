@@ -6,21 +6,27 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          100: '',
-          200: '#ecfffe',
-          300: '',
-          400: '',
-          500: defaultTheme.colors.teal[500],
-          600: defaultTheme.colors.teal[600],
-          700: '',
-          800: '',
-          900: ''
+          0: '#F7F7F7',
+          1: '#F2F2F2',
+          2: '#E6E6E6',
+          3: '#D9D9D9',
+          4: '#CCCCCC',
+          5: '#BFBFBF',
+          6: '#B3B3B3',
+          7: '#A6A6A6',
+          8: '#999999',
+          9: '#8C8C8C',
+          10: '#808080'
         },
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
+        'accent-3': '#808080',
+        'accent-4': '#5E5E5E',
+        'accent-5': '#4D4D4D',
+        'accent-6': '#424242',
         'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1'
+        link: '#BF4040',
+        'link-hover': '#DE2121'
       },
       spacing: {
         28: '7rem'
@@ -48,7 +54,8 @@ module.exports = {
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',
         medium: '0 8px 30px rgba(0, 0, 0, 0.12)'
       },
-      top: {
+      inset: {
+        '35': '35px',
         '50': '50px'
       }
     }

@@ -1,12 +1,36 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import cn from 'classnames'
-import { NAV_ITEMS } from '../lib/constants'
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+
+import { SITE, NAV_ITEMS } from '../lib/constants'
 
 export default function Navigation() {
+  const router = useRouter()
+
   const [showMenu, setShowMenu] = React.useState(false)
+  const [showShadow, setShowShadow] = React.useState(false)
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      if (currPos.y < 0) {
+        setShowShadow(true)
+      } else {
+        setShowShadow(false)
+      }
+    },
+    [showShadow]
+  )
 
   return (
-    <nav className='fixed inset-x-0 top-0 z-10 flex items-center justify-between flex-wrap bg-white p-6'>
+    <nav
+      className={cn(
+        'fixed inset-x-0 top-35 z-10 flex items-center justify-between flex-wrap bg-white p-6',
+        {
+          shadow: showShadow
+        }
+      )}
+    >
       <Link href='/'>
         <div className='flex items-center flex-shrink-0 text-black cursor-pointer mr-6'>
           <svg
@@ -28,7 +52,7 @@ export default function Navigation() {
             />
           </svg>
 
-          <span className='font-bold text-xl tracking-tight'>BVG Software</span>
+          <span className='font-bold text-xl tracking-tight'>{SITE.name}</span>
         </div>
       </Link>
       <div className='block lg:hidden'>
@@ -53,8 +77,16 @@ export default function Navigation() {
       >
         <div className='text-sm lg:flex-grow'>
           {NAV_ITEMS.map((link) => (
-            <Link key={link.slug} href={link.slug}>
-              <a className='block mt-4 lg:inline-block lg:mt-0 text-black font-bold mr-4'>
+            <Link key={link.slug} href='/[slug]' as={link.slug}>
+              <a
+                className={cn(
+                  'block mt-4 lg:inline-block lg:mt-0 hover:text-black font-bold mr-4 duration-200 transition-colors',
+                  {
+                    'text-black': router.pathname.includes(`/${link.slug}`),
+                    'text-primary-8': !router.pathname.includes(`/${link.slug}`)
+                  }
+                )}
+              >
                 {link.text}
               </a>
             </Link>

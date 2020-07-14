@@ -10,6 +10,7 @@
     "@fortawesome/fontawesome-svg-core": "1.2.29",
     "@fortawesome/free-solid-svg-icons": "5.13.1",
     "@fortawesome/react-fontawesome": "0.1.11",
+    "@n8tb1t/use-scroll-position": "1.0.43",
     "classnames": "2.2.6",
     "date-fns": "2.10.0",
     "gray-matter": "4.0.2",

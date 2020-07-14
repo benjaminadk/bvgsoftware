@@ -3,11 +3,11 @@
 }
 
 .markdown a {
-  @apply text-primary-500;
+  @apply text-link;
 }
 
 .markdown a:hover {
-  @apply text-primary-600;
+  @apply text-link-hover;
 }
 
 .markdown p,
