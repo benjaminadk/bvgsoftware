@@ -1,33 +1,20 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import cn from 'classnames'
-import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 import { SITE, NAV_ITEMS } from '../lib/constants'
 
-export default function Navigation() {
+export default function Navigation({ isScrolled }) {
   const router = useRouter()
-
   const [showMenu, setShowMenu] = React.useState(false)
-  const [showShadow, setShowShadow] = React.useState(false)
-
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      if (currPos.y < 0) {
-        setShowShadow(true)
-      } else {
-        setShowShadow(false)
-      }
-    },
-    [showShadow]
-  )
 
   return (
     <nav
       className={cn(
-        'fixed inset-x-0 top-35 z-10 flex items-center justify-between flex-wrap bg-white p-6',
+        'fixed inset-x-0 z-10 flex items-center justify-between flex-wrap bg-white p-6 transition-all duration-500',
         {
-          shadow: showShadow
+          'top-0 shadow-md': isScrolled,
+          'top-35': !isScrolled
         }
       )}
     >
@@ -75,23 +62,23 @@ export default function Navigation() {
           hidden: !showMenu
         })}
       >
-        <div className='text-sm lg:flex-grow'>
+        <ul className='text-sm lg:flex-grow'>
           {NAV_ITEMS.map((link) => (
-            <Link key={link.slug} href='/[slug]' as={link.slug}>
-              <a
-                className={cn(
-                  'block mt-4 lg:inline-block lg:mt-0 hover:text-black font-bold mr-4 duration-200 transition-colors',
-                  {
-                    'text-black': router.pathname.includes(`/${link.slug}`),
-                    'text-primary-8': !router.pathname.includes(`/${link.slug}`)
-                  }
-                )}
-              >
-                {link.text}
-              </a>
-            </Link>
+            <li
+              key={link.slug}
+              className={cn(
+                'block mt-4 lg:inline-block lg:mt-0 hover:text-black font-bold mr-4 cursor-pointer duration-200 transition-colors',
+                {
+                  'text-black': router.pathname.includes(`/${link.slug}`),
+                  'text-primary-8': !router.pathname.includes(`/${link.slug}`)
+                }
+              )}
+              onClick={() => router.push(`/${link.slug}`)}
+            >
+              {link.text}
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </nav>
   )

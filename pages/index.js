@@ -3,33 +3,12 @@ import Head from 'next/head'
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import Layout from '../components/layout'
-import BvgVideo from '../components/bvg-video'
+import FrontVideo from '../components/front-video'
+import FrontServices from '../components/front-services'
 import Klaviyo from '../components/klaviyo'
+
 import { getAllPosts } from '../lib/api'
-import { SITE_NAME } from '../lib/constants'
-
-const cards = [
-  { title: 'Mobile Applications', src: 'mobile.jpg' },
-  { title: 'Website Development', src: 'development.jpg' },
-  { title: 'Domain & Deployment', src: 'deployment.jpg' }
-]
-
-function Cards() {
-  return (
-    <div className='grid grid-cols-3 my-20'>
-      {cards.map((el) => (
-        <div key={el.title} className='flex flex-col items-center'>
-          <img
-            className='w-6/12'
-            src={`/assets/front/${el.src}`}
-            alt={el.title}
-          />
-          <h3 className='text-xl font-bold'>{el.title}</h3>
-        </div>
-      ))}
-    </div>
-  )
-}
+import { SITE } from '../lib/constants'
 
 export default function Index({ allPosts }) {
   const recentPosts = allPosts.slice(0, 4)
@@ -38,11 +17,11 @@ export default function Index({ allPosts }) {
     <>
       <Layout>
         <Head>
-          <title>{SITE_NAME} | Home</title>
+          <title>{SITE.name} | Insert Slogan Here</title>
         </Head>
-        <BvgVideo />
+        <FrontVideo />
+        <FrontServices />
         <Klaviyo version='embed' />
-        <Cards />
         <Container>
           {recentPosts.length > 0 && <MoreStories posts={recentPosts} />}
         </Container>

@@ -1,4 +1,4 @@
-export default function BvgVideo() {
+export default function FrontVideo() {
   const video = React.useRef()
 
   React.useEffect(() => {

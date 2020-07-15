@@ -2,16 +2,16 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 
-import Alert from '../../components/alert'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
 import PostTitle from '../../components/post-title'
+
 import { getPostBySlug, getAllPosts } from '../../lib/api'
-import { blogPosting } from '../../lib/schemaHelpers'
-import { SITE_NAME } from '../../lib/constants'
+import generateSchema from '../../lib/generate-schema'
+import { SITE } from '../../lib/constants'
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
@@ -29,7 +29,7 @@ export default function Post({ post, morePosts, preview }) {
             <article className='mb-32'>
               <Head>
                 <title>
-                  {post.title} | {SITE_NAME}
+                  {post.title} | {SITE.name}
                 </title>
                 <meta
                   key={post.slug}
@@ -53,7 +53,7 @@ export default function Post({ post, morePosts, preview }) {
                   key={post.slug}
                   type='application/ld+json'
                   dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(blogPosting(post))
+                    __html: JSON.stringify(generateSchema('blog', post))
                   }}
                 />
               </Head>

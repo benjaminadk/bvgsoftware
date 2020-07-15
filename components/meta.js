@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import generateSchema from '../lib/generate-schema'
+
 export default function Meta() {
   return (
     <Head>
@@ -31,6 +33,18 @@ export default function Meta() {
       <meta name='msapplication-config' content='/favicon/browserconfig.xml' />
       <meta name='theme-color' content='#000' />
       <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateSchema('website', null))
+        }}
+      />
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateSchema('organization', null))
+        }}
+      />
     </Head>
   )
 }
