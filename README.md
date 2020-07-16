@@ -17,3 +17,7 @@ Softare Development & Blog
 ## Website
 
 Website built with NextJS
+
+## Fetch & Pull
+
+Configured to fetch from GitHub and to push to both GitHub and Digital Ocean live Droplet
