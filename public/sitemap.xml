@@ -2,31 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bvgsoftware.com/posts/autohotkey-to-save-development-time</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bvgsoftware.com/posts/how-to-build-a-color-picker</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bvgsoftware.com/posts/how-to-create-gifs-with-node-js</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc
       >https://bvgsoftware.com/posts/how-to-use-local-storage-to-persist-data</loc
     >
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bvgsoftware.com/posts/svg-icon-with-no-artistic-ability</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bvgsoftware.com/contact</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bvgsoftware.com/</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bvgsoftware.com/posts</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bvgsoftware.com/services</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
   </url>
 </urlset>

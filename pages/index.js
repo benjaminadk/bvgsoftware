@@ -19,7 +19,7 @@ export default function Index({ allPosts }) {
         <Head>
           <title>{SITE.name} | Insert Slogan Here</title>
         </Head>
-        <FrontVideo />
+        <FrontVideo skip />
         <FrontServices />
         <Klaviyo version='embed' />
         <Container>

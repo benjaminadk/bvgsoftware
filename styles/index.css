@@ -22,10 +22,14 @@
   src: url(/assets/fonts/UbuntuMono-Bold.ttf) format('ttf');
 }
 
+#canvas-wrapper {
+  height: 100vh;
+}
+
 /* BVG Video */
 #bvg-video-wrapper {
   position: relative;
-  height: calc(100vh);
+  height: 100vh;
   display: grid;
   place-items: center center;
 }

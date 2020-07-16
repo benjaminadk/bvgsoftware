@@ -69,8 +69,8 @@ export default function Navigation({ isScrolled }) {
               className={cn(
                 'block mt-4 lg:inline-block lg:mt-0 hover:text-black font-bold mr-4 cursor-pointer duration-200 transition-colors',
                 {
-                  'text-black': router.pathname.includes(`/${link.slug}`),
-                  'text-primary-8': !router.pathname.includes(`/${link.slug}`)
+                  'text-blue-600': router.pathname.includes(`/${link.slug}`),
+                  'text-black': !router.pathname.includes(`/${link.slug}`)
                 }
               )}
               onClick={() => router.push(`/${link.slug}`)}
