@@ -31,4 +31,4 @@ As part of a recent interview process I was sent a package of materials to study
 
 I decided it might be more interesting to build a graphic version since I had been exploring SVG and [D3](https://d3js.org) in recent weeks. After completing the project, I find myself with a new appreciation for the power of SVG in user interface design. Aside from the frame surrounding the game, which is a series of tiny GIFs, and the fonts used to represent numeric values, the entire user interface is composed of [SVG Patterns](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Patterns) I created with [Boxy Svg](https://boxy-svg.com/).
 
-Check out the [source code](https://observablehq.com/@benjaminadk/minesweeper) at _Observable_.
+Check out the [source code](https://observablehq.com/@benjaminadk/minesweeper) at Observable

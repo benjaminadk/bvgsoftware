@@ -19,10 +19,12 @@ module.exports = {
           10: '#808080'
         },
         link: '#BF4040',
-        'link-hover': '#DE2121'
+        'link-hover': '#DE2121',
+        'inline-code': '#ffe5e5'
       },
       spacing: {
-        28: '7rem'
+        28: '7rem',
+        'inline-code': '.05rem'
       },
       letterSpacing: {
         tighter: '-.04em'
