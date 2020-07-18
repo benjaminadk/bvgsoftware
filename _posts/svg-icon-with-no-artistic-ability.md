@@ -1,4 +1,5 @@
 ---
+type: post
 title: 'SVG Icons With No Artistic Ablity'
 excerpt: 'Are you sick of the icons you have been using in your projects lately? Do you lack the artistic ability to draw a stick figure? If you answered yes, or even if you answered no, please continue reading.'
 coverImage: '/assets/blog/svg-icon-with-no-artistic-ability/cover.jpg'

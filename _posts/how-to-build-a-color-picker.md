@@ -1,4 +1,5 @@
 ---
+type: post
 title: 'How To Build A Color Picker With React'
 excerpt: 'Learn how to build a color picker from scratch using the popular UI library, React. Take your React skills to the next level by following this multipart series.'
 coverImage: '/assets/blog/how-to-build-a-color-picker/cover.jpg'

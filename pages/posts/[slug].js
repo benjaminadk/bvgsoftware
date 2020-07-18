@@ -18,6 +18,7 @@ export default function Post({ post, morePosts, preview }) {
   if (!router.isFallback && !post.slug) {
     return <ErrorPage statusCode={404} />
   }
+
   return (
     <Layout preview={preview}>
       <Container>
@@ -63,7 +64,7 @@ export default function Post({ post, morePosts, preview }) {
                 date={post.date}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              <PostBody post={post} />
             </article>
           </>
         )}
@@ -74,6 +75,7 @@ export default function Post({ post, morePosts, preview }) {
 
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
+    'type',
     'title',
     'date',
     'slug',

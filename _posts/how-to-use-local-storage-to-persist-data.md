@@ -1,4 +1,5 @@
 ---
+type: post
 title: 'How To Use Local Storage To Persist Data'
 excerpt: 'The browser comes equpped with a mechanism called the Web Storage API that can be used to store data in key/value pairs. Local Storage persists data even when the browser window is closed and reopened.'
 coverImage: '/assets/blog/how-to-use-local-storage-to-persist-data/cover.jpg'

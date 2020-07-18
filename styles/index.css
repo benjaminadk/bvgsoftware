@@ -22,33 +22,32 @@
   src: url(/assets/fonts/UbuntuMono-Bold.ttf) format('ttf');
 }
 
+body {
+  overflow-x: hidden;
+}
+
+/* Canvas */
 #canvas-wrapper {
-  height: 100vh;
-}
-
-/* BVG Video */
-#bvg-video-wrapper {
   position: relative;
-  height: 100vh;
-  display: grid;
-  place-items: center center;
-}
-
-#bvg-video-outline {
-  width: 66%;
-  padding: 50px;
-}
-
-#bvg-video {
-  display: block;
   width: 100%;
-  clip-path: url(#clip-00);
+  height: 100vh;
 }
 
-svg.clipping-paths {
-  width: 0;
-  height: 0;
+.bvg-software {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 140px;
+  font-weight: 700;
+  color: #ffffff;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  white-space: nowrap;
+}
+
+#minesweeper-frame img {
+  max-width: unset;
+  height: unset;
 }
 
 /* Table Styles */
@@ -58,7 +57,7 @@ table {
   font-size: 1rem;
   margin: auto;
   margin-bottom: 25px;
-  border: 1px solid #edf2f7;
+  border: 1px solid lightgrey;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }

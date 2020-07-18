@@ -2,17 +2,22 @@
   "name": "bvgsoftware",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "start": "cross-env NODE_ENV=production node server.js",
+    "start:next": "next start",
+    "dev": "node server.js",
+    "dev:next": "next",
+    "build": "next build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.29",
     "@fortawesome/free-solid-svg-icons": "5.13.1",
     "@fortawesome/react-fontawesome": "0.1.11",
     "@n8tb1t/use-scroll-position": "1.0.43",
+    "@observablehq/runtime": "4.7.1",
     "classnames": "2.2.6",
+    "cross-env": "7.0.2",
     "date-fns": "2.10.0",
+    "express": "4.17.1",
     "gray-matter": "4.0.2",
     "hast-util-to-string": "1.0.3",
     "next": "latest",

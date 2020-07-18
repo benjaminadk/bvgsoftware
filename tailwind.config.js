@@ -18,13 +18,6 @@ module.exports = {
           9: '#8C8C8C',
           10: '#808080'
         },
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-3': '#808080',
-        'accent-4': '#5E5E5E',
-        'accent-5': '#4D4D4D',
-        'accent-6': '#424242',
-        'accent-7': '#333',
         link: '#BF4040',
         'link-hover': '#DE2121'
       },

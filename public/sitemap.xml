@@ -23,6 +23,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://bvgsoftware.com/posts/minesweeper</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://bvgsoftware.com/posts/svg-icon-with-no-artistic-ability</loc>
     <changefreq>always</changefreq>
     <priority>1.0</priority>

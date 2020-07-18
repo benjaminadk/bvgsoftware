@@ -1,0 +1,14 @@
+{
+  "name": "@benjaminadk/minesweeper",
+  "main": "file1.js",
+  "version": "968.0.0",
+  "homepage": "https://observablehq.com/@benjaminadk/minesweeper",
+  "author": {
+    "name": "BVG Software",
+    "url": "https://observablehq.com/@benjaminadk"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}
