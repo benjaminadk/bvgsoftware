@@ -11,6 +11,13 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc
+      >https://bvgsoftware.com/posts/how-to-build-a-command-line-application</loc
+    >
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://bvgsoftware.com/posts/how-to-create-gifs-with-node-js</loc>
     <changefreq>always</changefreq>
     <priority>1.0</priority>

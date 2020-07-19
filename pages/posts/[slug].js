@@ -13,14 +13,14 @@ import { getPostBySlug, getAllPosts } from '../../lib/api'
 import generateSchema from '../../lib/generate-schema'
 import { SITE } from '../../lib/constants'
 
-export default function Post({ post, morePosts, preview }) {
+export default function Post({ post, morePosts }) {
   const router = useRouter()
   if (!router.isFallback && !post.slug) {
     return <ErrorPage statusCode={404} />
   }
 
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -29,34 +29,33 @@ export default function Post({ post, morePosts, preview }) {
           <>
             <article className='mb-32'>
               <Head>
-                <title>
+                <title key='title'>
                   {post.title} | {SITE.name}
                 </title>
-                <meta
-                  key={post.slug}
-                  property='description'
-                  content={post.excerpt}
-                />
-
-                <meta key={post.slug} property='og:type' content='article' />
-                <meta
-                  key={post.slug}
-                  property='og:description'
-                  content={post.excerpt}
-                />
-
-                <meta
-                  key={post.slug}
-                  property='og:image'
-                  content={post.coverImage}
-                />
+                <meta property='description' content={post.excerpt} />
+                <meta key='type' property='og:type' content='article' />
+                <meta property='og:title' content={post.title} />
+                <meta property='og:description' content={post.excerpt} />
+                <meta property='og:image' content={post.coverImage} />
+                <meta property='og:image:type' content='image/jpeg' />
+                <meta property='og:image:width' content='2000' />
+                <meta property='og:image:height' content='1000' />
                 <script
-                  key={post.slug}
+                  key='blog-schema'
                   type='application/ld+json'
                   dangerouslySetInnerHTML={{
                     __html: JSON.stringify(generateSchema('blog', post))
                   }}
                 />
+                {post.video && (
+                  <script
+                    key='video-schema'
+                    type='application/ld+json'
+                    dangerouslySetInnerHTML={{
+                      __html: JSON.stringify(generateSchema('video', post))
+                    }}
+                  />
+                )}
               </Head>
               <PostHeader
                 title={post.title}
@@ -80,8 +79,10 @@ export async function getStaticProps({ params }) {
     'date',
     'slug',
     'author',
+    'excerpt',
     'content',
-    'coverImage'
+    'coverImage',
+    'video'
   ])
 
   return {

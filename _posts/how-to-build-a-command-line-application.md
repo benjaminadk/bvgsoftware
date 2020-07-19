@@ -1,12 +1,17 @@
 ---
-type: post
+type: 'post'
 title: 'How To Build A Command Line Application'
 excerpt: 'JavaScript can be used for more than just manipulating the DOM in the browser. NodeJS can be used to build powerful command line applications. This article walks through a beginner level project.'
 coverImage: '/assets/blog/how-to-build-a-command-line-application/cover.jpg'
 date: '2020-01-25T05:35:07.322Z'
 author:
-  name: BVG Software
+  name: 'BVG Software'
   picture: '/assets/blog/authors/bvg.jpg'
+video:
+  description: 'Watch our command line application, built with JavaScript and Node, work in the real world. This video shows how to use the command itself and the various options to create thumbnail images.'
+  thumbnailUrl: '/assets/blog/how-to-build-a-command-line-application'
+  contentUrl: 'https://youtu.be/Mjzr1jwlaCQ'
+  duration: 'PT3M54S'
 ---
 
 JavaScript can be used for more than just manipulating the DOM in the browser. NodeJS can be used to build powerful command line applications. Over recent months I have developed my own CLI to speed up repetitive tasks at work. The project we build in this article is a small portion of that larger application and will do a lot more than output "Hello World" to your console.

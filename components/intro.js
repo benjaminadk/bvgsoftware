@@ -5,7 +5,7 @@ export default function Intro() {
         Blog
       </h1>
       <h4 className='text-center md:text-left text-lg mt-5 md:pl-8'>
-        Passing on my knowledge and experience with Next + Markdown.
+        Learn to code. No, it is not too late.
       </h4>
     </section>
   )

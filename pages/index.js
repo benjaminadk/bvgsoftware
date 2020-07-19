@@ -1,5 +1,3 @@
-import Head from 'next/head'
-
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import Layout from '../components/layout'
@@ -8,7 +6,6 @@ import FrontServices from '../components/front-services'
 import Klaviyo from '../components/klaviyo'
 
 import { getAllPosts } from '../lib/api'
-import { SITE } from '../lib/constants'
 
 export default function Index({ allPosts }) {
   const recentPosts = allPosts.slice(0, 4)
@@ -16,9 +13,6 @@ export default function Index({ allPosts }) {
   return (
     <>
       <Layout>
-        <Head>
-          <title>{SITE.name} | Insert Slogan Here</title>
-        </Head>
         <FrontVideo />
         <FrontServices />
         <Klaviyo version='embed' />
