@@ -8,7 +8,7 @@ import { getAllPosts } from '../../lib/api'
 
 export default function Index({ allPosts }) {
   const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+  const morePosts = allPosts.slice(1, 5)
 
   return (
     <>
@@ -25,7 +25,9 @@ export default function Index({ allPosts }) {
               excerpt={heroPost.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {morePosts.length > 0 && (
+            <MoreStories posts={morePosts} subtitle='Recent Posts' />
+          )}
         </Container>
       </Layout>
     </>

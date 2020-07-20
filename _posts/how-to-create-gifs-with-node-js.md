@@ -9,34 +9,38 @@ author:
   picture: '/assets/blog/authors/bvg.jpg'
 ---
 
-When you want to convey as message, but an image is too simplistic and a video is too complex, a GIF can be the perfect middle ground. As a JavaScript developer, I recently wondered:
+When you want to convey as message, but an image is too simplistic and a video is too complex, a GIF can be the perfect middle ground. As a JavaScript developer, I wondered...
 
-1. Could I write a program to create a GIF?
-2. Could JavaScript even do this?
+- Could GIFs be created with JavaScript?
+- If yes, could I write a program accomplish that task?
 
-After a little research and a lot of trial and error, I found the answer to both question is `yes`. This article sums up what I found out.
+After a little research, and a lot of trial and error, I found the answer to both question was yes. This article sums up what I found.
 
-<p class='flex justify-center'>
-<img src='/assets/blog/how-to-create-gifs-with-node-js/rick-james.gif' alt="Rick James GIF from Dave Chapelle Show" />
-</p>
-
----
+<img src='/assets/blog/how-to-create-gifs-with-node-js/rick-james.gif' alt="Rick James GIF from Dave Chapelle Show" caption="Rick James GIF" />
 
 ## The GIF Format
 
-A good starting point is to research some of the history and structure of a GIF. It turns out the Graphics Interchange Format has was originally created by CompuServe back in the 1980s and was one of the first image formats used on the web. While the PNG format has pretty much replaced GIF for single images, GIF's ability to animate a series of images keeps the format relevant and supported today. In GIFs as we know them today, each image is allowed a maximum palette size of 256 colors. This limitation is why GIFs are more suited to illustrations rather than photography, even though they are used for both. GIF images are also compressed using the LZW algorithm, which provides lossless data compression. For more general information, [Wikipedia](https://en.wikipedia.org/wiki/GIF) is a great source, and for an in-depth breakdown of the entire specification, check out [What's In a GIF](http://giflib.sourceforge.net/whatsinagif/index.html).
+A good starting point is to research the history of the GIF format. It turns out the Graphics Interchange Format was originally created by CompuServe back in the 1980s and was one of the first image formats used on the web. While the PNG format has pretty much replaced GIF for single images, GIF's ability to animate a series of images keeps the format relevant and supported today.
+
+In GIFs as we know them today, each image is allowed a maximum palette size of 256 colors. This limitation is why GIF is more suited to illustrations than photography, even though it is used for both. GIF images are compressed using the LZW algorithm, which provides lossless data compression. For more general information, [Wikipedia](https://en.wikipedia.org/wiki/GIF) is a great source, and for an in-depth breakdown of the entire specification, check out [What's In a GIF](http://giflib.sourceforge.net/whatsinagif/index.html).
 
 ## My Use Case
 
-I have been playing around with [Electron](https://electronjs.org/) a lot lately and I decided to attempt a desktop application that could record the user's screen and then turn the captured images into a GIF. The Electron environment combines the features of the browser, the the features of [Node](https://nodejs.org/en/), and Electron's own APIs. Electron's `desktopCapturer` API makes capturing the user's screen a frame at a time and then saving those images to disk possible. Having these sequencial images is essential to this approach to GIF encoding. My project article [GifIt](https://benjaminbrooke.me/projects/gifit/) goes into more detail on that subject, and the [GifIt Source Code](https://github.com/benjaminadk/gifit/tree/master/src/renderer/components/Recorder) is available if you want to check out how I went about recording the desktop. At this point, my goal became to write my own library for GIF encoding.
+I have been playing around with [Electron](https://electronjs.org/) a lot lately and I decided to attempt a desktop application that could record the user's screen and then turn the captured images into a GIF. The Electron environment combines the features of the browser, the the features of [Node](https://nodejs.org/en/), and Electron's own APIs. Electron's `desktopCapturer` API makes capturing the user's screen a frame at a time and then saving those images to disk possible. Having these sequencial images is essential to this approach to GIF encoding.
+
+My article [GifIt](https://benjaminbrooke.me/projects/gifit/) goes into more detail on that subject, and the [Source Code](https://github.com/benjaminadk/gifit/tree/master/src/renderer/components/Recorder) is available if you want to check out how I went about recording the desktop. At this point, my goal became to write my own library for GIF encoding.
 
 ## Existing Libraries
 
-The next step I took was to look into existing libraries on [NPM](https://www.npmjs.com/) and [Github](https://github.com/). There are a few options, and which one you use depends a lot of your use case and the available documentation. It looks like the original implementation in JavaScript was [gif.js](https://github.com/jnordberg/gif.js). I poked around the files and was happy to find that the `LZWEncoder` and `NeuQuant` algorithms had already been ported. I used these as building blocks for my library.
+The next step I took was to look into existing libraries on [NPM](https://www.npmjs.com/) and [Github](https://github.com/). There are a few options, and which one you use depends a lot of your use case and the available documentation. It looks like the original implementation in JavaScript was [gif.js](https://github.com/jnordberg/gif.js). I poked around the files and was happy to find that the `LZWEncoder` and `NeuQuant` algorithms had already been ported to JavaScript. I used these as building blocks for my library.
 
-## My Library
+## My GIF Library
 
-One thing I noticed about existing libraries was that GIFs took a long time to process and the size of the output files seemed really large. [GIF Encoder 2](https://github.com/benjaminadk/gif-encoder-2) adds new features to help mitigate these downsides. The first thing I did was add an optional optimizer. I discoved that a lot of time was being spent reducing an image into its 256 color palette. This process involves looking at the color of every pixel in an image and was being done by the NeuQuant algoritm. I added the ability to reuse the palette from the previous image if the current and previous image were similar. Checking this adds overhead, but not nearly as much overhead as calculating a new color palette. I also added a second algorithm called Octree that uses a totally different method to calculate the color palette. This ended up resulting in smaller smaller file sizes.
+One thing I noticed about existing libraries was that GIFs took a long time to process and the size of the output files seemed really large. [GIF Encoder 2](https://github.com/benjaminadk/gif-encoder-2) adds new features to help mitigate these downsides.
+
+The first thing I did was add an optional optimizer. I discoved that a lot of time was being spent reducing an image into its 256 color palette. This process involves looking at the color of every pixel in an image and was being done by the NeuQuant algoritm. I added the ability to reuse the palette from the previous image if the current and previous image are similar. Checking this adds a small amount of overhead, but not nearly as much overhead as calculating a new color palette.
+
+I also added a second algorithm called Octree that uses a totally different method to calculate the color palette. This ended up resulting in smaller smaller file sizes.
 
 ## Using Gif Encoder 2
 
@@ -55,6 +59,8 @@ npm install gif-encoder-2
 |  `algorithm`   | string  |     `neuquant` or `octree`     |    no    | `neuquant` |
 | `useOptimizer` | boolean |   enables/disables optimizer   |    no    |   false    |
 | `totalFrames`  | number  |     total number of images     |    no    |     0      |
+
+The constructor requires 2 arguments, but can accept up to 5.
 
 <div class="filename">constructor.js</div>
 
@@ -137,23 +143,17 @@ writeFile(path.join(__dirname, 'output', 'beginner.gif'), buffer, (error) => {
 })
 ```
 
----
-
-- beginner.gif
-
-<p class='flex justify-center'>
-<img src='/assets/blog/how-to-create-gifs-with-node-js/beginner.gif' alt="Beginner GIF example of animated colored squares" />
-</p>
-
----
+<img src='/assets/blog/how-to-create-gifs-with-node-js/beginner.gif' alt="Beginner GIF example of animated colored squares" caption="Beginner GIF" />
 
 ### Advanced Example
 
 This example creates a reusable function that reads a directory of image files and turns them into a GIF. The encoder itself isn't as complicated as the surrounding code.
 
-Note that `setDelay` can be called once (sets all frames to value) or once per frame (sets delay value for that frame).
+This logic is a simplified version of my GIF recording application.
 
-Obviously, you can use any directory and filenames you want if you recreate the following example.
+Note that `setDelay` can be called once (sets all frames to the value passed in) or once per frame (sets delay value for that frame).
+
+**Code Walkthrough**
 
 1. Read a directory of images (gets the path to each image)
 2. Create an `Image` to find the dimensions
@@ -226,25 +226,17 @@ createGif('neuquant')
 createGif('octree')
 ```
 
-- NeuQuant
+<img src='/assets/blog/how-to-create-gifs-with-node-js/neuquant.gif' alt="Advanced GIF example using neuquant algoritm" caption="Neuquant" />
 
-<p class='flex justify-center'>
-<img src='/assets/blog/how-to-create-gifs-with-node-js/neuquant.gif' alt="Advanced GIF example using neuquant algoritm" />
-</p>
-
-- Octree
-
-<p class='flex justify-center'>
-<img src='/assets/blog/how-to-create-gifs-with-node-js/octree.gif' alt="Advanced GIF example using octree algoritm" />
-</p>
-
----
+<img src='/assets/blog/how-to-create-gifs-with-node-js/octree.gif' alt="Advanced GIF example using octree algoritm" caption="Octree" />
 
 ## Alternative Encoding Method
 
-While Gif Encoder 2 is reliable and can encode GIFs faster than other existing libraries, I did find one alternative that works better but requires the [FFmpeg](https://ffmpeg.org/) stream processing library to be installed on the host machine. FFmpeg is a command line tool, but can be executed by Node using the `childprocess` API. When I was creating GifIt I added the ability to adjust the duration of each frame in the GIF. Imagine a user wants to display a title page for 5 seconds before running through the rest of the frames or wants to cut the duration of certain frames by half. In order to accomadate these variable durations FFmpeg requires a text file describing the path and duration of each image. The duration is in seconds and the paths are relative.
+While Gif Encoder 2 is reliable and can encode GIFs faster than other existing libraries, I did find one alternative that works better. This method requires the [FFmpeg](https://ffmpeg.org/) stream processing library to be installed on the host machine. FFmpeg is a command line tool, but can be executed by Node using the `childprocess` API.
 
-- example from [FFmpeg Docs](https://trac.ffmpeg.org/wiki/Slideshow)
+When I was creating GifIt I added the ability to adjust the duration of each frame in the GIF. Imagine a user wants to display a title page for 5 seconds before running through the rest of the frames or wants to cut the duration of certain frames by half. In order to accomadate these variable durations FFmpeg requires a text file describing the path and duration of each image. The duration is in seconds and the paths are relative.
+
+Example from [FFmpeg Docs](https://trac.ffmpeg.org/wiki/Slideshow)
 
 ```bash
 file '/path/to/dog.png'
@@ -258,13 +250,13 @@ duration 2
 file '/path/to/tapeworm.png'
 ```
 
-This is a simplifed version of the function I used in GifIt.
+The following is a simplifed version of the function I used in GifIt.
 
-- `images` is an object that contains the absolute path and duration of the frame
+- `images` is an array of frame objects with absolute path and duration properties
 - `dstPath` is the destination to save the output GIF file
-- `cwd` is the absolute path of the current working directory (image files must be here as well)
-- `ffmpegPath` is the absolute path to the FFmpeg executable on the host machine
-- the path to the last image is added twice to ensure thhe GIF loops correctly
+- `cwd` is the absolute path of the current working directory
+- `ffmpegPath` is the absolute path to the FFmpeg executable on my host machine
+- the path to the last image is added twice as required by FFmpeg
 
 ```js
 import { execFile } from 'child_process'
@@ -309,4 +301,4 @@ export const createGif = async (images, dstPath, cwd, ffmpegPath) => {
 }
 ```
 
-Best of luck creating your GIFs!!! Hit me up if you have any questions.
+Contact us if you have any questions

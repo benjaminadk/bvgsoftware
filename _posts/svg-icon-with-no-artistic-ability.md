@@ -1,7 +1,7 @@
 ---
-type: post
+type: 'post'
 title: 'SVG Icons With No Artistic Ablity'
-excerpt: 'Are you sick of the icons you have been using in your projects lately? Do you lack the artistic ability to draw a stick figure? If you answered yes, or even if you answered no, please continue reading.'
+excerpt: 'Are you sick of the same old icons you have been using in your projects lately? Do you lack the artistic ability to draw a stick figure? If you answered yes, or even if you answered no, please continue reading.'
 coverImage: '/assets/blog/svg-icon-with-no-artistic-ability/cover.jpg'
 date: '2019-07-10T05:35:07.322Z'
 author:
@@ -9,7 +9,9 @@ author:
   picture: '/assets/blog/authors/bvg.jpg'
 ---
 
-Are you sick of the icons you have been using in your projects lately? Do you lack the artistic ability to draw a stick figure? If you answered yes (or no), please continue reading.
+Are you sick of the same old icons you have been using in your projects lately? Do you lack the artistic ability to draw a stick figure? If you answered yes (or no), please continue reading.
+
+## My SVG Issue
 
 Since I began building things with JavaScript I have been using essentially the same icon set over and over. I often work with [React](https://reactjs.org/) and [Styled Components](https://www.styled-components.com/) so my go-to icon library has been [Styled Icons](https://styled-icons.js.org/). Styled Icons contains the same familiar icon sets we have probably all used at some point: Font Awesome, Material Design, Boxicons, etc. Even though there are thousands of choices and all of these icon collections are great in their own right, I got to the point where I couldn't find the right icons for my use cases and all my projects sort of looked the same. I thought creating my own icon set was way out of reach due to my complete lack of artistic talent. Turns out I was wrong.
 
@@ -59,19 +61,29 @@ Example Boxicons Chromium icon
 </svg>
 </p>
 
-The solution to my problem was [Scalable Vector Graphics](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics), or SVG. To get started you will need some kind of SVG editor. Here is [a list of 7 free SVG editors](https://www.maketecheasier.com/free-graphic-editor-for-creating-vector-image/). My personal preference is [Boxy SVG](https://boxy-svg.com/), but I haven't tried any others <span role='img' aria-label='eye roll'>🙄</span>. The great part about SVGs is that mathematical skills are more important than artistic skills. Boxy SVG has a ton of settings/options and taking the time to familiarize yourself with them is worthwhile. Here are the steps I take to create my icons with a few tips based on my experience.
+The solution to my problem was [Scalable Vector Graphics](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics), or SVG. To get started, all that is required is some kind of SVG editor. Here is [a list of 7 free SVG editors](https://www.maketecheasier.com/free-graphic-editor-for-creating-vector-image/). My personal preference is [Boxy SVG](https://boxy-svg.com/), but I haven't tried any others <span role='img' aria-label='eye roll'>🙄</span>.
 
----
+The great part about working with SVGs is that mathematical skills are just as important than artistic skills. Boxy SVG has a ton of settings and taking the time to familiarize yourself with them is worthwhile. Here are the basic steps I take to create my icons.
 
-## Step 1 - Draw an icon
+## How I Design Custom SVG Icons
+
+### Step 1 - Draw an icon
 
 - Change the dimensions of the canvas to 50px by 50px
 - Geometry options help size and position elements
 - Backgrounds will be transparent unless you set the fill attribute
 
-I used the Circle and the Pie tool to create this:
+<div class="flex items-center">
+<span class="mr-2">I used the Circle and the Pie tool to create this</span>
+<svg width='50' viewBox="0 0 50 50">
+  <path d="M15.362 4.281a23 23 0 0 1 32.478 23.07l-22.898-2.16z" fill="#e94435"/>
+  <path d="M47.882 27.292a23 23 0 0 1-36.496 15.97l13.638-18.52z" fill="#35a755"/>
+  <path d="M11.569 43.37a23 23 0 0 1 4.762-39.552l9.037 21.15z" fill="#fabd05"/>
+  <circle cx="25" cy="25" r="8" stroke="#fff" fill="#3f84f3"/>
+</svg>
+</div>
 
-Hints
+**Hints**
 
 - Make one 120 degree pie piece
 - Copy and Paste it two times
@@ -80,25 +92,25 @@ Hints
 - The inner circle has a 1px white stroke
 - Match colors with a [Color Dropper Tool](https://github.com/benjaminadk/color-tool-remix)
 
----
-
-## Step 2 - Optimize your SVG
+### Step 2 - Optimize your SVG
 
 - Save your icon as an `svg` file
 - Go to [OMGSVG](https://jakearchibald.github.io/svgomg/) and open your file. This web app is a cool utility that simplifies the markup required to render your svg.
 - Change settings and toggle the Show Original button to see the difference
 - Image / Markup tabs while both change based on settings
-- I generally use defaults and with Prettify Markup but customize when needed
+- I generally use the default settings including `Prettify Markup` but customize when needed
 
-The more complex your SVG the more dramatic the optimization:
+The more complex your SVG the more dramatic the optimization
 
-Original
-![original-markup](original-markup.png)
+**Original**
 
-Optimized
-![optimized-markup](optimized-markup.png)
+<img src="/assets/blog/svg-icon-with-no-artistic-ability/original-markup.png" alt="Original SVG markup before optimization">
 
-An SVG looks great no matter what the size
+**Optimized**
+
+<img src="/assets/blog/svg-icon-with-no-artistic-ability/optimized-markup.png" alt="Optimized SVG markup after optimization">
+
+An SVG remains sharp despite scaling up size
 
 <p className="flex items-center justify-between">
 <svg width='300' viewBox="0 0 50 50">
@@ -151,8 +163,7 @@ An SVG looks great no matter what the size
 </svg>
 </p>
 
-Out final markup looks like this:
-
+- Copy and Paste markup into your project
 - Drop all the `xmln` stuff since we are using these with inline HTML
 - Add a `width` attribute to the SVG or use CSS to style
 
@@ -175,9 +186,9 @@ Out final markup looks like this:
 </svg>
 ```
 
----
+### Step 3 - Create a Reusable React Component
 
-## Step 3 - Create a Reusable React Component
+One benefit of React is component reusability. We can leverage the functional nature of react to parameterize the name of an icon. This essentially abstracts the SVG markup into a single file and we can represent icons throughout an application with `<Svg name='google' />`.
 
 - `Svg` component will take `name` as props
 - The `name` prop will tell `Svg` what markup to return
@@ -231,14 +242,12 @@ export default Svg
 - Add as many icons as you need
 - Use like any other React component
 
----
+### Step 4 - Other Ideas
 
-## Step 4 - Other Ideas
-
-- Set size via passing a `width` / `height` prop or via CSS or however you style things
+- Set size via passing a `width` / `height` prop or via CSS. Be creative here.
 - Pass `fill` or `stroke` as a prop to change up colors
 
-Now we have the Chromium icon <span role='img' aria-label='sparkles'>✨</span>:
+A couple small changes and we have the [Chromium](https://www.chromium.org/) icon
 
 <p className="flex items-center justify-between">
 <svg width='300' viewBox='0 0 50 50'>
@@ -293,7 +302,7 @@ Now we have the Chromium icon <span role='img' aria-label='sparkles'>✨</span>:
 
 - To simplify the concept lets add a `dot` icon
 
-If our new component looked like this:
+<div class='filename'>Svg.js</div>
 
 ```js
 function Svg({ name, fill = 'black' }) {
@@ -332,7 +341,7 @@ function Svg({ name, fill = 'black' }) {
 }
 ```
 
-We could have React code like this:
+Pass in a `fill` prop. Note the use of a default parameter so we don't get errors if `fill` is omitted.
 
 ```js
 <>
@@ -342,8 +351,6 @@ We could have React code like this:
   <Svg name='dot' fill='greenyellow' />
 </>
 ```
-
-And render:
 
 <p className="flex items-center justify-between">
 <svg width='100px' viewBox='0 0 50 50'>
@@ -363,15 +370,15 @@ And render:
 </svg>
 </p>
 
----
-
 ## In Closing
 
-Now you know how to make your own icons and turn them into an easy-to-use _React_ component. Hopefully, you agree with my premise that minimal artistic ability is required. I would argue the most important skill is understanding the features of your preferred SVG editor. There is a time investment here but I use working on these icons as a break from the more mind crunching code of my main projects. I think the result is websites and applications that look better and are more engaging for the user.
+Now you know how to make your own icons and turn them into a simple and reuseable React component. Hopefully, you agree with my premise that minimal artistic ability is required. I could even argue that the most important skill is understanding the features of your SVG editor.
+
+There is a time investment here but I use working on these icons as a break from the more mind crunching code of my projects. I think the end results are websites and applications that look more authentic and are more engaging for the user.
 
 ---
 
-### Examples From My Last Project
+\*\*Examples From My Last Project
 
 <p className="flex items-center justify-between">
 <svg width='100px' viewBox='0 0 50 50' style='margin-right: 20px;'>

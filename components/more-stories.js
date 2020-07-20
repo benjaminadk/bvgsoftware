@@ -1,10 +1,10 @@
 import PostPreview from '../components/post-preview'
 
-export default function MoreStories({ posts }) {
+export default function MoreStories({ posts, subtitle = 'Recent Blog Posts' }) {
   return (
     <section>
       <h2 className='my-20 text-6xl md:text-7xl text-center font-bold tracking-tighter leading-tight'>
-        Recent Blog Posts
+        {subtitle}
       </h2>
 
       <div className='grid grid-cols-1 md:grid-cols-2 md:col-gap-16 lg:col-gap-20 row-gap-20 md:row-gap-20 mb-32'>

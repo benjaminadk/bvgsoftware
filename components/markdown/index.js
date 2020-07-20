@@ -3,7 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export function Li({ children, ...rest }) {
   return (
     <li {...rest}>
-      <FontAwesomeIcon icon={['fa', 'caret-right']} />
+      <FontAwesomeIcon
+        className='mr-2 text-red-700'
+        icon={['fa', 'caret-right']}
+      />
       {children}
     </li>
   )
@@ -17,10 +20,11 @@ export function Span({ children, ...rest }) {
   }
 }
 
-export function Img(props) {
+export function Img({ caption, ...rest }) {
   return (
-    <div className='flex justify-center'>
-      <img {...props} />
+    <div className='flex flex-col items-center my-8'>
+      <img className='shadow-md' {...rest} />
+      {caption && <span className='text-gray-700 text-sm mt-1'>{caption}</span>}
     </div>
   )
 }
@@ -28,7 +32,7 @@ export function Img(props) {
 export function Iframe(props) {
   return (
     <div className='flex justify-center'>
-      <iframe {...props} />
+      <iframe className='shadow-md' {...props} />
     </div>
   )
 }

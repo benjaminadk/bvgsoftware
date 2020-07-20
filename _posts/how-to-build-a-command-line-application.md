@@ -9,7 +9,6 @@ author:
   picture: '/assets/blog/authors/bvg.jpg'
 video:
   description: 'Watch our command line application, built with JavaScript and Node, work in the real world. This video shows how to use the command itself and the various options to create thumbnail images.'
-  thumbnailUrl: '/assets/blog/how-to-build-a-command-line-application'
   contentUrl: 'https://youtu.be/Mjzr1jwlaCQ'
   duration: 'PT3M54S'
 ---

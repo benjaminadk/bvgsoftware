@@ -1,5 +1,5 @@
 ---
-type: post
+type: 'post'
 title: 'How To Build A Color Picker With React'
 excerpt: 'Learn how to build a color picker from scratch using the popular UI library, React. Take your React skills to the next level by following this multipart series.'
 coverImage: '/assets/blog/how-to-build-a-color-picker/cover.jpg'
@@ -9,7 +9,9 @@ author:
   picture: '/assets/blog/authors/bvg.jpg'
 ---
 
-Building a color picker was one of the first projects I tried my hand at once I knew how to string together a couple lines of JavaScript. They were total abombinations if my memory serves me correctly. Recently, I decided to see what my current skills could produce. This article will cover the step by step process. The target audience for the article probably has some experience with React, but by no means does it require expert ability. I will do by best to keep a slow pace and explain the thinking behind component composition and how the pieces fit together.
+Building a color picker was one of the first projects I tried once I knew how to string together a couple lines of JavaScript. They were total abombinations if my memory serves me correctly. Recently, I decided to see what my current skills could produce.
+
+This article will cover the step by step process. The target audience for the article probably has some experience with React, but by no means does it require expert ability. I will do by best to keep a slow pace and explain the thinking behind component composition and how the pieces fit together.
 
 <iframe
      src="https://codesandbox.io/embed/color-picker-v6oo1?autoresize=1&codemirror=1&fontsize=12&hidenavigation=1&theme=dark"
@@ -21,7 +23,9 @@ Building a color picker was one of the first projects I tried my hand at once I 
 
 ## Getting Started
 
-Start by creating a new [Code Sandbox](https://codesandbox.io/) with the React template. Code Sandbox is a free cloud development environment that makes creating prototypes quick and easy. This tutorial will use [Styled Components](https://www.styled-components.com), which can be installed easily throught the Add Dependencies interface. Install it and then delete the `.css` file and its `import` statement. If you are not familiar with Styled Components, have no fear, 90% of it is just plain old CSS. To keep things simple, all files will be in the `src` directory. Use the following code to get started.
+Start by creating a new [Code Sandbox](https://codesandbox.io/) with the React template. Code Sandbox is a free cloud development environment that makes creating prototypes quick and easy. This tutorial will use [Styled Components](https://www.styled-components.com), which can be installed easily throught the Add Dependencies interface. Install it and then delete the `.css` file and its `import` statement. If you are not familiar with Styled Components, have no fear, 90% of it is just plain old CSS.
+
+To keep things simple, all files will be in the `src` directory. Use the following code to get started.
 
 - `index.js` is the root of our application, where we render our React component
 
@@ -80,7 +84,7 @@ body {
 `
 ```
 
-- `Picker.js` is where the magic will happen
+- `Picker.js` is where the business logic will be
 
 <div class='filename'>Picker.js</div>
 
@@ -111,11 +115,11 @@ const Picker = () => {
 export default Picker
 ```
 
-This boilerplate should result in a black rectangle in the middle of the screen. This will be a color swatch. The goal to have the picker appear when this swatch is clicked and for its background color to be dynamically set based on user input. The first thing needed is some sort of container to hold the color picker. This component will behave like a Modal, opening when the swatch is clicked, with the ability to close via a button or by clicking the screen outside the Picker.
+This boilerplate should result in a black rectangle in the middle of the screen. This will be a color swatch. The goal is to have the picker appear when this swatch is clicked and for its background color to be dynamically set based on user input.
 
----
+The first thing needed is some sort of container to hold the color picker. This component will behave like a Modal, opening when the swatch is clicked, with the ability to close via a button or by clicking the screen outside the Picker.
 
-## Modal
+## Modal Component
 
 <div class='filename'>Modal.js</div>
 
@@ -169,11 +173,15 @@ const Modal = ({ modal, show, onClose, children }) => {
 export default Modal
 ```
 
-The Modal component works by layering a backdrop and an inner container. The backdrop is fixed behind the modal using the `z-index` property. This allows the backdrop to listen for clicks and close the entire component while the foreground can be clicked without triggering the close event. The funny looking brackets `<></>` are shorthand for `React.Fragment` and allow sibling elements to be returned by a component. The `show` prop is a `Boolean` passed down from Picker to control the `display` style. When `show` is `false` the style is set to `display: none`. Styled Components also comes with a `keyframes` helper function which is used with `transform: scale()` to give a zoom effect when the Picker appears. The `children` prop is available on all components in React and allows the Modal to be a reusable wrapper component. Finally, the `modal` prop is a `ref` that will be used later in positioning calculations.
+The Modal component works by layering a backdrop and an inner container. The backdrop is fixed behind the modal using the `z-index` property. This allows the backdrop to listen for clicks and close the entire component while the foreground can be clicked without triggering the close event. The funny looking brackets `<></>` are shorthand for `React.Fragment` and allow sibling elements to be returned by a component.
+
+The `show` prop is a `Boolean` passed down from Picker to control the `display` style. When `show` is `false` the style is set to `display: none`. Styled Components also comes with a `keyframes` helper function which is used with `transform: scale()` to give a zoom effect when the Picker appears. The `children` prop is available on all components in React and allows the Modal to be a reusable wrapper component. Finally, the `modal` prop is a `ref` that will be used later in positioning calculations.
 
 For those new to Styled Components, the above code should illustrate some of the reasons why the library works so well with React. The standard pattern of passing `props` allows us to set dynamic styles. We can also interpolate variables like `zoom` to make the code even more resuable.
 
-As a side note, this basic Modal can be used for anything - sign up forms, image lightboxes, videos, etc. The trick to centering the component is the 50% positioning and transformation. Tweak the animation styles, transform origin, and width to suite particular use cases. Also, set the value of `show` to `true` to speed up development. This will remove the annoying step of clicking the swatch on every update.
+As a side note, this basic Modal can be used for anything - sign up forms, image lightboxes, videos, etc. The trick to centering the component is the 50% positioning and transformation.
+
+Tweak the animation styles, transform origin, and width to suite particular use cases. Also, temporarily set the value of `show` to `true` to speed up development. This will remove the annoying step of clicking the swatch on every update.
 
 - Add Modal to Picker
 
@@ -199,11 +207,9 @@ const Picker = () => {
 }v
 ```
 
-Make sure to `import` the Modal component into Picker. Create `show` and `setShow` with `React.useState` - this is a [React Hook](https://reactjs.org/docs/hooks-state.html) and we are defining the state variable and setter funtion. The `modal` variable is created with `React.useRef` - this gives us a reference to the underlying DOM node. Clicking the rectangle will open the modal and the 😎 emoji should appear. `<div>😎</div>` is the `children` prop referenced above in the last step.
+Make sure to `import` the Modal component into Picker. Create `show` and `setShow` with `React.useState`. This is a [React Hook](https://reactjs.org/docs/hooks-state.html) and we are defining the state variable and setter funtion. The `modal` variable is created with `React.useRef` and this gives us a reference to the underlying DOM node. Clicking the rectangle will open the modal and the 😎 emoji should appear. `<div>😎</div>` is the `children` prop referenced above in the last step.
 
----
-
-## Config
+## Config File
 
 Before moving on create a `config.js` file to hold a few constants. I find that pulling values like this out into a separate file saves time in the long run. This gives us the ability to quickly change these settings without having to hunt down each reference in the source code.
 
@@ -227,7 +233,7 @@ The `squareSize` will be used for both the width and the height of the color squ
 
 This color picker can incorporate various color formats but for now [HSL](https://en.wikipedia.org/wiki/HSLandHSV), or hue, saturation, lightness will be used. In my opinion, HSL lends itself to user input in a more intuitive way than other color formats. The Hue component is a rectangular bar displaying the full range of color hues, from 0 to 360.
 
-<img src='picker-1.png'/>
+<img src='/assets/blog/how-to-build-a-color-picker/color-picker-1.png' alt="Color Picker starting to take shape" caption="Color Picker" />
 
 The Hue bar itself is actually an HTML Canvas element. When the Picker loads, a custom React hook is used to draw the 360 degrees of color. A `ref` to the underlying DOM node is passed to the hook so that `Canvas.getContext()` can be called. The hook uses `ctx.createLinearGradient()` and a `for` loop to add the necessary color stops to the gradient. Using the HSL color format makes this process easy. A custom hook is not necessary but it does separate concerns.
 
@@ -358,9 +364,7 @@ There is a decent amout going on in the Hue component. There is a wrapper that h
 
 The `mousemove` event listener is attached to the `document.body` element because when dragging a handle such as this it is very unlikely the user will stay within the bounds of the Picker. The event handler is throttled with `lodash.throttle` so it can only fire once every `delay` seconds. Try changing the `delay` and logging `x` (the result of the `computePosition` function). As you will see, throttling makes a big difference. When the Square component is built this will be even more important due to the increase in processor load from canvas repaints.
 
-<div class='center'>
-<img src='throttle.gif' style="max-width: 800px;">
-</div>
+<img src='/assets/blog/how-to-build-a-color-picker/color-picker.gif' alt="Thottling in action" caption="Throttling In Action">
 
 If some of the calculations seem confusing its because they are. The `barSize` is used because it is also the same value as the width and height of Handle. In this case the width of the Handle is part of calculating the `left` position. Lets walk through the steps that happen when the `mousemove` event handler is fired.
 
@@ -548,7 +552,7 @@ export default Svg
 
 If the Hue was confusing, the Square will be worse! The Square is be used to find both the Saturation and the Lightness of the color. Instead of working in a single dimension, the Square exists in 2. The Square will change color based on the current `hue` and the user will be able to drag a crosshair to select the color they want.
 
-<img src="picker-2.png">
+<img src="/assets/blog/how-to-build-a-color-picker/color-picker-2.png" alt="Color Picker" caption="Color Picker">
 
 Once again a custom hook is used to fill the Square. Instead of only firing on page load, like the Hue paint hook, this hook will fire every time the `hue` changes. This is why throttling is important. Repainting the Square 100 times a second is not necessary and will slow down the app.
 

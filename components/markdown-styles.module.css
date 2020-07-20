@@ -33,15 +33,3 @@
 .markdown li > code {
   @apply text-red-700 bg-inline-code px-2 py-inline-code rounded-sm text-sm;
 }
-
-.markdown li svg {
-  @apply mr-2 text-red-700;
-}
-
-.markdown iframe {
-  @apply shadow-md;
-}
-
-.markdown img {
-  @apply shadow-lg;
-}
