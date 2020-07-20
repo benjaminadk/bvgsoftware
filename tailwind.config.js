@@ -18,9 +18,9 @@ module.exports = {
           9: '#8C8C8C',
           10: '#808080'
         },
-        link: '#BF4040',
-        'link-hover': '#DE2121',
-        'inline-code': '#ffe5e5'
+        link: '#ef3b7d',
+        'link-hover': '#d3366f',
+        'inline-code': '#ffe7f0'
       },
       spacing: {
         28: '7rem',

@@ -31,5 +31,5 @@
 
 .markdown p > code,
 .markdown li > code {
-  @apply text-red-700 bg-inline-code px-2 py-inline-code rounded-sm text-sm;
+  @apply text-link bg-inline-code px-2 py-inline-code rounded-sm text-sm;
 }

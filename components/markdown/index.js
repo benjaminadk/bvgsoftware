@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import cn from 'classnames'
+import copy from 'clipboard-copy'
 
 export function Li({ children, ...rest }) {
   return (
     <li {...rest}>
       <FontAwesomeIcon
-        className='mr-2 text-red-700'
+        className='mr-2 text-link'
         icon={['fa', 'caret-right']}
       />
       {children}
@@ -34,5 +36,32 @@ export function Iframe(props) {
     <div className='flex justify-center'>
       <iframe className='shadow-md' {...props} />
     </div>
+  )
+}
+
+export function Pre(props) {
+  const code = React.useRef()
+
+  const [copied, setCopied] = React.useState(false)
+
+  function onClick() {
+    copy(code.current.textContent)
+    setCopied(true)
+
+    setTimeout(() => {
+      setCopied(false)
+    }, 5000)
+  }
+
+  return (
+    <pre ref={code} className={cn(`${props.className} relative`)}>
+      {props.children}
+      <span
+        onClick={onClick}
+        className='absolute right-0 top-0 text-xs bg-gray-400 hover:bg-link text-black px-2 py-1 transition-colors duration-200 cursor-pointer'
+      >
+        <FontAwesomeIcon icon={['fa', copied ? 'check' : 'copy']} />
+      </span>
+    </pre>
   )
 }

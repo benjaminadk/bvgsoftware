@@ -457,7 +457,7 @@ const Button = styled.button`
 ```
 
 - Svg markup for spinner
-- Checkout [Svg Icons With No Artistic Ability](https://benjaminbrooke.me/posts/svg-icons-with-no-artistic-ability/) to learn more about how I make my icons in React
+- Checkout [Svg Icons With No Artistic Ability](https://benjaminbrooke.me/posts/svg-icons-with-no-artistic-ability/) to learn more
 
 ```jsx
 <svg viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'>
