@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://bvgsoftware.com/posts/gitmoji-commit</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://bvgsoftware.com/posts/how-to-build-a-color-picker</loc>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
@@ -31,6 +36,13 @@
   </url>
   <url>
     <loc>https://bvgsoftware.com/posts/minesweeper</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc
+      >https://bvgsoftware.com/posts/react-form-validation-with-formik-graphql-yup</loc
+    >
     <changefreq>always</changefreq>
     <priority>1.0</priority>
   </url>

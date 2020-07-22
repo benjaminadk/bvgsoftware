@@ -1,5 +1,5 @@
 import Container from '../components/container'
-import MoreStories from '../components/more-stories'
+import PostsRecent from '../components/posts-recent'
 import Layout from '../components/layout'
 import FrontVideo from '../components/front-video'
 import FrontServices from '../components/front-services'
@@ -17,7 +17,7 @@ export default function Index({ allPosts }) {
         <FrontServices />
         <Klaviyo version='embed' />
         <Container>
-          {recentPosts.length > 0 && <MoreStories posts={recentPosts} />}
+          {recentPosts.length > 0 && <PostsRecent posts={recentPosts} />}
         </Container>
       </Layout>
     </>

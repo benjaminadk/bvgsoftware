@@ -14,7 +14,7 @@ export default function FrontVideo() {
     const colorPalette = {
       bg: { r: 0, g: 0, b: 0 },
       matter: [
-        { r: 204, g: 46, b: 49 },
+        { r: 239, g: 59, b: 125 },
         { r: 230, g: 230, b: 230 }
       ]
     }

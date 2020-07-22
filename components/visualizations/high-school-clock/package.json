@@ -1,0 +1,14 @@
+{
+  "name": "@benjaminadk/high-school-clock",
+  "main": "deddcfaaeaef4af4@510.js",
+  "version": "510.0.0",
+  "homepage": "https://observablehq.com/@benjaminadk/high-school-clock",
+  "author": {
+    "name": "BVG Software",
+    "url": "https://observablehq.com/@benjaminadk"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}

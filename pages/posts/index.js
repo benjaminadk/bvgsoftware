@@ -1,6 +1,7 @@
 import Layout from '../../components/layout'
 import Container from '../../components/container'
-import MoreStories from '../../components/more-stories'
+import PostsRecent from '../../components/posts-recent'
+import PostsArchive from '../../components/posts-archive'
 import HeroPost from '../../components/hero-post'
 import Intro from '../../components/intro'
 
@@ -9,6 +10,7 @@ import { getAllPosts } from '../../lib/api'
 export default function Index({ allPosts }) {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1, 5)
+  const restOfPosts = allPosts.slice()
 
   return (
     <>
@@ -26,8 +28,9 @@ export default function Index({ allPosts }) {
             />
           )}
           {morePosts.length > 0 && (
-            <MoreStories posts={morePosts} subtitle='Recent Posts' />
+            <PostsRecent posts={morePosts} subtitle='Recent Posts' />
           )}
+          {restOfPosts.length > 0 && <PostsArchive posts={restOfPosts} />}
         </Container>
       </Layout>
     </>
@@ -36,6 +39,7 @@ export default function Index({ allPosts }) {
 
 export async function getStaticProps() {
   const allPosts = getAllPosts([
+    'type',
     'title',
     'date',
     'slug',

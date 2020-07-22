@@ -20,7 +20,8 @@ module.exports = {
         },
         link: '#ef3b7d',
         'link-hover': '#d3366f',
-        'inline-code': '#ffe7f0'
+        'inline-code': '#ffe7f0',
+        copy: '#76d9e6'
       },
       spacing: {
         28: '7rem',

@@ -58,7 +58,7 @@ export function Pre(props) {
       {props.children}
       <span
         onClick={onClick}
-        className='absolute right-0 top-0 text-xs bg-gray-400 hover:bg-link text-black px-2 py-1 transition-colors duration-200 cursor-pointer'
+        className='absolute right-0 top-0 text-xs bg-copy text-black px-2 py-1 transition-colors duration-200 cursor-pointer'
       >
         <FontAwesomeIcon icon={['fa', copied ? 'check' : 'copy']} />
       </span>

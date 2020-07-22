@@ -19,6 +19,7 @@
     "cross-env": "7.0.2",
     "date-fns": "2.10.0",
     "express": "4.17.1",
+    "formik": "2.1.5",
     "gray-matter": "4.0.2",
     "hast-util-to-string": "1.0.3",
     "next": "latest",
