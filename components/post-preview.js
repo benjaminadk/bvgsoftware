@@ -17,7 +17,7 @@ export default function PostPreview({
       </div>
       <h3 className='text-2xl font-bold mb-3 leading-snug'>
         <Link as={`/posts/${slug}`} href='/posts/[slug]'>
-          <a className='hover:text-red-700'>{title}</a>
+          <a className='hover:text-link'>{title}</a>
         </Link>
       </h3>
       <div className='text-lg mb-4'>
