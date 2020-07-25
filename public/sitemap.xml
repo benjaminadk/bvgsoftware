@@ -11,6 +11,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://bvgsoftware.com/posts/high-school-clock</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://bvgsoftware.com/posts/how-to-build-a-color-picker</loc>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
@@ -48,6 +53,11 @@
   </url>
   <url>
     <loc>https://bvgsoftware.com/posts/svg-icon-with-no-artistic-ability</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bvgsoftware.com/api</loc>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
   </url>

@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const next = require('next')
 
 const port = parseInt(process.env.PORT, 10) || 3000
@@ -8,6 +9,17 @@ const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
   const server = express()
+
+  server.use(cors())
+
+  server.post(
+    '/api/contact',
+    express.urlencoded({ extended: false }),
+    (req, res) => {
+      console.log(req.body.name)
+      res.json({ success: true })
+    }
+  )
 
   server.all('*', (req, res) => {
     return handle(req, res)

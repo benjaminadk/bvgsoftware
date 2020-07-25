@@ -20,7 +20,7 @@ export default function Index({ allPosts }) {
         <Container>
           {recentPosts.length > 0 && <PostsRecent posts={recentPosts} />}
         </Container>
-        <Container>{/* <FrontContact /> */}</Container>
+        <FrontContact />
       </Layout>
     </>
   )

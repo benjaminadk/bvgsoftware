@@ -1,0 +1,14 @@
+{
+  "name": "@benjaminadk/simple-binary-search-tree",
+  "main": "364fa054f520b3fa@514.js",
+  "version": "514.0.0",
+  "homepage": "https://observablehq.com/@benjaminadk/simple-binary-search-tree",
+  "author": {
+    "name": "BVG Software",
+    "url": "https://observablehq.com/@benjaminadk"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}

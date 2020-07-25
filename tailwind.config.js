@@ -57,5 +57,10 @@ module.exports = {
       }
     }
   },
-  plugins: [require('tailwindcss-debug-screens')]
+  plugins: [require('tailwindcss-debug-screens')],
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus', 'disabled'],
+    cursor: ['responsive', 'disabled'],
+    textColor: ['responsive', 'hover', 'focus', 'disabled']
+  }
 }

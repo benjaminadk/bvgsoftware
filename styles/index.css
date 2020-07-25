@@ -52,6 +52,29 @@ body {
   height: unset;
 }
 
+/* Binary Search Tree */
+#simple-binary-search-tree .visualization {
+  margin-left: -6rem;
+}
+
+#simple-binary-search-tree input[type='number'] {
+  border: 1px solid #000;
+  padding: 2px;
+}
+
+#simple-binary-search-tree input[type='button'],
+#simple-binary-search-tree input[type='submit'] {
+  font-weight: 600;
+  padding: 2.5px 5px;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+#simple-binary-search-tree input[type='button']:hover,
+#simple-binary-search-tree input[type='submit']:hover {
+  background-color: #e8e8e8;
+}
+
 /* Line Highlight */
 .highlight {
   width: 100%;
