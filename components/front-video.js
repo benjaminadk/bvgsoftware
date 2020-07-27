@@ -154,19 +154,32 @@ export default function FrontVideo() {
       canvas.current.dispatchEvent(ev)
     }
 
-    for (let i = 5; i < 30; i += 2) {
-      setTimeout(() => {
-        click(
-          Math.random() * canvas.current.width,
-          Math.random() * canvas.current.height
-        )
-      }, i * 1000)
+    // for (let i = 5; i < 60; i += 2) {
+    //   setTimeout(() => {
+    //     click(
+    //       Math.random() * canvas.current.width,
+    //       Math.random() * canvas.current.height
+    //     )
+    //   }, i * 1000)
+    // }
+
+    function randomPop() {
+      click(
+        Math.random() * canvas.current.width,
+        Math.random() * canvas.current.height
+      )
+    }
+
+    var interval = setInterval(randomPop, 1000)
+
+    return () => {
+      clearInterval(interval)
     }
   }, [])
 
   return (
     <div id='canvas-wrapper' className='bg-black'>
-      <h1 className='bvg-software'>BVG Software</h1>
+      <h1 className='bvg-software tracking-in-expand'>BVG Software</h1>
       <canvas ref={canvas} />
     </div>
   )
