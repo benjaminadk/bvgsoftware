@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://bvgsoftware.com/posts/covid-19-deaths-by-age-group</loc>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://bvgsoftware.com/posts/gitmoji-commit</loc>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
@@ -48,6 +53,11 @@
     <loc
       >https://bvgsoftware.com/posts/react-form-validation-with-formik-graphql-yup</loc
     >
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bvgsoftware.com/posts/simple-binary-search-tree</loc>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
   </url>

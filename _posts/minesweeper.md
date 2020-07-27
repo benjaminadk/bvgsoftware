@@ -1,11 +1,11 @@
 ---
-type: visualization
-title: Minesweeper
+type: 'visualization'
+title: 'Minesweeper'
 excerpt: 'Hello 1997! This visualization and source code celebrates the classic Windows game that lived in the shadow of Solitare for years and years. Enjoy if you can remember how to play.'
 coverImage: '/assets/blog/minesweeper/cover.jpg'
 date: '2019-07-18T05:35:07.322Z'
 author:
-  name: BVG Software
+  name: 'BVG Software'
   picture: '/assets/blog/authors/bvg.jpg'
 ---
 

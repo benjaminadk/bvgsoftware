@@ -75,6 +75,30 @@ body {
   background-color: #e8e8e8;
 }
 
+.tooltip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  background: #fff;
+  border: 2px solid #808080;
+  border-radius: 4px;
+  z-index: 10;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.tooltip-1,
+.tooltip-2 {
+  width: 140px;
+}
+
+.tooltip-large {
+  width: 180px;
+}
+
 /* Line Highlight */
 .highlight {
   width: 100%;
