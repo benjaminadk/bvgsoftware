@@ -13,7 +13,7 @@ export default function Alert({ isScrolled }) {
       )}
     >
       <Container>
-        <div className='py-2 text-center text-xs font-bold'>
+        <div className='py-2 text-center lg:text-xs text-xxs font-bold'>
           The BVG Software website is 🚧 UNDER CONSTRUCTION 🚧
         </div>
       </Container>

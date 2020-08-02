@@ -2,6 +2,9 @@ export default function FrontVideo() {
   const canvas = React.useRef()
 
   React.useEffect(() => {
+    if (window.innerWidth < 768) {
+      return
+    }
     canvas.current.width = window.innerWidth
     canvas.current.height = window.innerHeight
     const ctx = canvas.current.getContext('2d')
@@ -154,15 +157,6 @@ export default function FrontVideo() {
       canvas.current.dispatchEvent(ev)
     }
 
-    // for (let i = 5; i < 60; i += 2) {
-    //   setTimeout(() => {
-    //     click(
-    //       Math.random() * canvas.current.width,
-    //       Math.random() * canvas.current.height
-    //     )
-    //   }, i * 1000)
-    // }
-
     function randomPop() {
       click(
         Math.random() * canvas.current.width,
@@ -179,8 +173,10 @@ export default function FrontVideo() {
 
   return (
     <div id='canvas-wrapper' className='bg-black'>
-      <h1 className='bvg-software tracking-in-expand'>BVG Software</h1>
-      <canvas ref={canvas} />
+      <h1 className='bvg-software text-3xl sm:text-banner tracking-in-expand'>
+        BVG Software
+      </h1>
+      <canvas ref={canvas} className='md:block hidden' />
     </div>
   )
 }

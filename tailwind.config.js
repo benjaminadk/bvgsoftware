@@ -38,13 +38,16 @@ module.exports = {
         mono: ['"Ubuntu Mono"', ...defaultTheme.fontFamily.mono]
       },
       fontSize: {
+        xxs: '.7rem',
         '2xl': '1.5rem',
         '3xl': '1.875rem',
         '4xl': '2.25rem',
         '5xl': '2.5rem',
         '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem'
+        '7xl': '3.5rem',
+        '8xl': '4.5rem',
+        '9xl': '6.25rem',
+        banner: '140px'
       },
       boxShadow: {
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',

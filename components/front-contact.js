@@ -24,12 +24,12 @@ function FrontContact({
 
   return (
     <section className='bg-black py-20 mb-40'>
-      <h2 className='mb-8 text-6xl md:text-7xl text-white text-center font-bold tracking-tighter leading-tight'>
+      <h2 className='mb-8 lg:text-8xl text-7xl text-white text-center font-bold tracking-tighter leading-tight'>
         Contact Us
       </h2>
 
       <form className='flex flex-col items-center' onSubmit={handleSubmit}>
-        <div className='w-1/3 flex flex-col mb-10'>
+        <div className='lg:w-1/3 w-11/12 flex flex-col mb-10'>
           <FormField type='text' name='name' label='Name' required />
           <FormField type='email' name='email' label='Email' required />
           <FormField textarea name='message' label='Message' required />
