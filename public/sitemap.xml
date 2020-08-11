@@ -11,6 +11,13 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc
+      >https://bvgsoftware.com/posts/covid-19-pandemic-timelapse-choropleth</loc
+    >
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://bvgsoftware.com/posts/gitmoji-commit</loc>
     <changefreq>always</changefreq>
     <priority>1.0</priority>

@@ -33,7 +33,7 @@ export default function HighSchoolClock() {
   return (
     <div>
       <div>
-        <div>Clock Size</div>
+        <div className='font-bold'>Clock Size</div>
         <input
           type='range'
           value={size}

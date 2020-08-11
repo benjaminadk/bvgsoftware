@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import PostPreview from './post-preview'
 
@@ -23,11 +24,20 @@ export default function MoreStories({ posts, subtitle = 'Recent Blog Posts' }) {
         ))}
       </div>
 
-      <h3 className='lg:mt-20 mt-10 lg:mb-16 mb-8 lg:text-7xl text-6xl text-center font-bold tracking-tighter leading-tight'>
-        <Link href='/posts'>
-          <a className='hover:text-link'>Discover More Blog Posts</a>
-        </Link>
-      </h3>
+      {subtitle === 'Recent Blog Posts' && (
+        <h3 className='lg:mt-20 mt-10 lg:mb-16 mb-8 lg:text-7xl text-6xl text-center font-bold tracking-tighter leading-tight'>
+          <Link href='/posts'>
+            <a className='hover:text-link'>
+              <span>Discover More Blog Posts</span>
+
+              <FontAwesomeIcon
+                className='ml-8'
+                icon={['fa', 'external-link-alt']}
+              />
+            </a>
+          </Link>
+        </h3>
+      )}
     </section>
   )
 }
