@@ -74,6 +74,13 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc
+      >https://bvgsoftware.com/posts/wordpress-form-to-email-and-google-sheet</loc
+    >
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://bvgsoftware.com/api</loc>
     <changefreq>always</changefreq>
     <priority>1.0</priority>

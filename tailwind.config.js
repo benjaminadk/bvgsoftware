@@ -23,6 +23,9 @@ module.exports = {
         'inline-code': '#ffe7f0',
         copy: '#76d9e6'
       },
+      cursor: {
+        'zoom-in': 'zoom-in'
+      },
       spacing: {
         28: '7rem',
         'inline-code': '.05rem'

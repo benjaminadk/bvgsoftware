@@ -45,7 +45,7 @@ The above list is bad enough on its own, but gets even worse if the Shipping and
 
 Enter AutoHotKey. To get started just [download the current version](https://www.autohotkey.com/). Once installed you have the ability to create, edit and run AutoHotKey scripts. Our goal in this article is to create and run a script that will help us fill out our annoying form. To create this script simply right-click the desktop and select `New` then `AutoHotkey Script`. This should create a new icon on the desktop with an `ahk` extension. Next right-click the new icon and select `Edit Script`. This should open Notepad and look something like this.
 
-<img src='/assets/blog/autohotkey-to-save-development-time/create-new-script.gif' alt="GIF displaying new autohotkey script creation from desktop" caption="Create An AutoHotKey Script" />
+<img src='/assets/blog/autohotkey-to-save-development-time/create-new-script.gif' alt="Create An AutoHotKey Script" />
 
 ## Using HotStrings
 
@@ -59,7 +59,7 @@ Tada. Now we have a basic HotString. The letters inside the `::` represent the a
 
 To test our script just save the file and double-click the desktop icon. To make sure our script is running check the tray in the bottom right corner of the screen. You should see the AutoHotKey logo. As long as our script is running our HotString will work by typing `cc` followed by either `Enter` or `Tab` to trigger the expansion.
 
-<img src='/assets/blog/autohotkey-to-save-development-time/windows-tray-icon.png' alt="AutoHotKey icon in Windows tray" caption="AutoHotKey In Windows Tray" />
+<img src='/assets/blog/autohotkey-to-save-development-time/windows-tray-icon.png' alt="AutoHotKey Icon In Windows Tray" />
 
 If all is well we can now create HotStrings for the rest of the annoying form fields we need. In my opinion all the fields could be included with the exception of `Card CVV` and possiblly `Card Expiration` or `Zip Code`. For the sake of the article I made HotStrings for everything. You can edit a running script but make sure to right-click the tray icon and click `Reload This Script` for changes to take effect. Naturally, feel free to make the HotString using your name and any characters you want.
 
@@ -77,7 +77,7 @@ If all is well we can now create HotStrings for the rest of the annoying form fi
 
 With new HotString powers at the tip of our fingers filling out tedious forms is a breeze. The proof is in the pudding as they say. I was able to complete the form in half the time it took me without HotStrings.
 
-<img src='/assets/blog/autohotkey-to-save-development-time/form-time-alert.png' alt="Alert displaying time to fill out form in seconds" caption="AutoHotKey Saved 20 Seconds" />
+<img src='/assets/blog/autohotkey-to-save-development-time/form-time-alert.png' alt="AutoHotKey Saved 20 Seconds" />
 
 To take things to another level it is possible to remove the need for a trigger key. I our case, using the `Tab` key makes sense since it moves focus to the next field, but to be fully streamlined just add an `*` to each HotString between the first set of colons.
 

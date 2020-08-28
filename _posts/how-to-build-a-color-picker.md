@@ -233,7 +233,7 @@ The `squareSize` will be used for both the width and the height of the color squ
 
 This color picker can incorporate various color formats but for now [HSL](https://en.wikipedia.org/wiki/HSLandHSV), or hue, saturation, lightness will be used. In my opinion, HSL lends itself to user input in a more intuitive way than other color formats. The Hue component is a rectangular bar displaying the full range of color hues, from 0 to 360.
 
-<img src='/assets/blog/how-to-build-a-color-picker/color-picker-1.png' alt="Color Picker starting to take shape" caption="Color Picker" />
+<img src='/assets/blog/how-to-build-a-color-picker/color-picker-1.png' alt="Color Picker" />
 
 The Hue bar itself is actually an HTML Canvas element. When the Picker loads, a custom React hook is used to draw the 360 degrees of color. A `ref` to the underlying DOM node is passed to the hook so that `Canvas.getContext()` can be called. The hook uses `ctx.createLinearGradient()` and a `for` loop to add the necessary color stops to the gradient. Using the HSL color format makes this process easy. A custom hook is not necessary but it does separate concerns.
 
@@ -364,7 +364,7 @@ There is a decent amout going on in the Hue component. There is a wrapper that h
 
 The `mousemove` event listener is attached to the `document.body` element because when dragging a handle such as this it is very unlikely the user will stay within the bounds of the Picker. The event handler is throttled with `lodash.throttle` so it can only fire once every `delay` seconds. Try changing the `delay` and logging `x` (the result of the `computePosition` function). As you will see, throttling makes a big difference. When the Square component is built this will be even more important due to the increase in processor load from canvas repaints.
 
-<img src='/assets/blog/how-to-build-a-color-picker/color-picker.gif' alt="Thottling in action" caption="Throttling In Action">
+<img src='/assets/blog/how-to-build-a-color-picker/color-picker.gif' alt="Thottling In Action" />
 
 If some of the calculations seem confusing its because they are. The `barSize` is used because it is also the same value as the width and height of Handle. In this case the width of the Handle is part of calculating the `left` position. Lets walk through the steps that happen when the `mousemove` event handler is fired.
 
@@ -552,7 +552,7 @@ export default Svg
 
 If the Hue was confusing, the Square will be worse! The Square is be used to find both the Saturation and the Lightness of the color. Instead of working in a single dimension, the Square exists in 2. The Square will change color based on the current `hue` and the user will be able to drag a crosshair to select the color they want.
 
-<img src="/assets/blog/how-to-build-a-color-picker/color-picker-2.png" alt="Color Picker" caption="Color Picker">
+<img src="/assets/blog/how-to-build-a-color-picker/color-picker-2.png" alt="Color Picker" />
 
 Once again a custom hook is used to fill the Square. Instead of only firing on page load, like the Hue paint hook, this hook will fire every time the `hue` changes. This is why throttling is important. Repainting the Square 100 times a second is not necessary and will slow down the app.
 

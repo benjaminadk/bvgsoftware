@@ -13,7 +13,7 @@ The High School Clock design is based on a photo I found after Googling `high sc
 
 I built the project with [D3](https://d3js.org/), a JavaScript data visualization library. The coolest thing is that this clock actually keeps accurate time by using `setInterval` and the native `Date` object. I update the position of the hands every second and use different animations to achive a realistic look.
 
-<img src="/assets/blog/high-school-clock/original-clock.jpg" alt="Original High School Clock" caption="Original Clock Image">
+<img src="/assets/blog/high-school-clock/original-clock.jpg" alt="Original High School Clock" />
 
 The hour hand is basic, a simple rectangle.
 

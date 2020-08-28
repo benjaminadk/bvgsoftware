@@ -1,4 +1,4 @@
-export default function FrontVideo() {
+export default function FrontBanner() {
   const canvas = React.useRef()
 
   React.useEffect(() => {
@@ -165,6 +165,10 @@ export default function FrontVideo() {
     }
 
     var interval = setInterval(randomPop, 1000)
+
+    setTimeout(() => {
+      clearInterval(interval)
+    }, 20000)
 
     return () => {
       clearInterval(interval)

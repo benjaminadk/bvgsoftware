@@ -63,7 +63,7 @@ touch index.js
 
 If any of the instructions above were unfamiliar, or didn't work, you may want to do some googling to learn more about Node, NPM, Bash and the command line in general.
 
-<img src="/assets/blog/how-to-build-a-command-line-application/command-line-app.gif" alt="Bash commands to initialize project and file structures" />
+<img src="/assets/blog/how-to-build-a-command-line-application/command-line-app.gif" alt="Bash Commands To Initialize Project" />
 
 I suppose now would be a good time to let everyone know what this application is actually going to do.
 
@@ -145,7 +145,7 @@ The `package.json` file also needs to be updated. The important lines are highli
 
 Now type `make-thumbs` in the command line. It should throw and error something like what you see below.
 
-<img src="/assets/blog/how-to-build-a-command-line-application/command-line-app-1.png" alt="Command line output for make thumbs with error" >
+<img src="/assets/blog/how-to-build-a-command-line-application/command-line-app-1.png" alt="Command Line Output For Make Thumbs" />
 
 There is one more step to wire the global command to work on our system. Make sure you are in the root of the project.
 
@@ -155,11 +155,11 @@ npm link
 
 This should trigger the following output. NPM is working magic behind the scenes.
 
-<img src="/assets/blog/how-to-build-a-command-line-application/command-line-app-2.png" alt="Command line output for npm link">
+<img src="/assets/blog/how-to-build-a-command-line-application/command-line-app-2.png" alt="Command Line Output For NPM Link" />
 
 Try typing `make-thumbs` in the command line one more time.
 
-<img src="/assets/blog/how-to-build-a-command-line-application/command-line-app-3.png" alt="Command line output for make thumbs now works" >
+<img src="/assets/blog/how-to-build-a-command-line-application/command-line-app-3.png" alt="Command Line Output For Make Thumbs Works!" />
 
 👍
 
@@ -195,7 +195,7 @@ make-thumbs --help
 
 Output for our `help` command.
 
-<img src="/assets/blog/how-to-build-a-command-line-application/command-line-app-4.png" alt="Command line output of make thumbs help command" >
+<img src="/assets/blog/how-to-build-a-command-line-application/command-line-app-4.png" alt="Command Line Output For Help Command" >
 
 The options allow us to input a path to a directory of source images and a path to the directory we want to save the new thumbnails in. These are relative to the current working directory and not absolute paths. Relative paths make sense because the nature of a command line application is that is portable. Relative paths are also shorter to type. These options will be passed into our underlying image manipulation logic.
 

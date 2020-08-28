@@ -104,11 +104,11 @@ The more complex your SVG the more dramatic the optimization
 
 **Original**
 
-<img src="/assets/blog/svg-icon-with-no-artistic-ability/original-markup.png" alt="Original SVG markup before optimization">
+<img src="/assets/blog/svg-icon-with-no-artistic-ability/original-markup.png" alt="Original SVG markup before optimization" />
 
 **Optimized**
 
-<img src="/assets/blog/svg-icon-with-no-artistic-ability/optimized-markup.png" alt="Optimized SVG markup after optimization">
+<img src="/assets/blog/svg-icon-with-no-artistic-ability/optimized-markup.png" alt="Optimized SVG markup after optimization" />
 
 An SVG remains sharp despite scaling up size
 

@@ -1,7 +1,7 @@
 import Container from '../components/container'
 import PostsRecent from '../components/posts-recent'
 import Layout from '../components/layout'
-import FrontVideo from '../components/front-video'
+import FrontBanner from '../components/front-banner'
 import FrontServices from '../components/front-services'
 import FrontKlaviyo from '../components/front-klaviyo'
 import FrontContact from '../components/front-contact'
@@ -14,7 +14,7 @@ export default function Index({ allPosts }) {
   return (
     <>
       <Layout>
-        <FrontVideo />
+        <FrontBanner />
         <FrontServices />
         <FrontKlaviyo version='embed' />
         <Container>

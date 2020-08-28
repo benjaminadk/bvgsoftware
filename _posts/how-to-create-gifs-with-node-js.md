@@ -16,7 +16,7 @@ When you want to convey as message, but an image is too simplistic and a video i
 
 After a little research, and a lot of trial and error, I found the answer to both question was yes. This article sums up what I found.
 
-<img src='/assets/blog/how-to-create-gifs-with-node-js/rick-james.gif' alt="Rick James GIF from Dave Chapelle Show" caption="Rick James GIF" />
+<img src='/assets/blog/how-to-create-gifs-with-node-js/rick-james.gif' alt="Rick James GIF" />
 
 ## The GIF Format
 
@@ -143,7 +143,7 @@ writeFile(path.join(__dirname, 'output', 'beginner.gif'), buffer, (error) => {
 })
 ```
 
-<img src='/assets/blog/how-to-create-gifs-with-node-js/beginner.gif' alt="Beginner GIF example of animated colored squares" caption="Beginner GIF" />
+<img src='/assets/blog/how-to-create-gifs-with-node-js/beginner.gif' alt="Beginner GIF" />
 
 ### Advanced Example
 
@@ -226,9 +226,9 @@ createGif('neuquant')
 createGif('octree')
 ```
 
-<img src='/assets/blog/how-to-create-gifs-with-node-js/neuquant.gif' alt="Advanced GIF example using neuquant algoritm" caption="Neuquant" />
+<img src='/assets/blog/how-to-create-gifs-with-node-js/neuquant.gif' alt="Neuquant Algoritm" />
 
-<img src='/assets/blog/how-to-create-gifs-with-node-js/octree.gif' alt="Advanced GIF example using octree algoritm" caption="Octree" />
+<img src='/assets/blog/how-to-create-gifs-with-node-js/octree.gif' alt="Octree Algoritm" />
 
 ## Alternative Encoding Method
 

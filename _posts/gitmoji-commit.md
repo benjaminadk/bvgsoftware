@@ -25,13 +25,13 @@ A short video describing the extension in use.
 
 The genesis of Gitmoji Commit came about when I was working in a small team and the team leader wanted to use emojis in our commit messages. This didn't seem like a hassle until I found myself having to surf around and lookup the right emoji every time I made a commit. I searched for an extension in VS Code, and when I came back with nothing I decided it would be a good time to learn how to write my own. VS Code has done a great job documenting the steps required to [work with extensions](https://code.visualstudio.com/api/get-started/your-first-extension).
 
-<img src='/assets/blog/gitmoji-commit/gitmojis.png' alt="Popular emojis from Gitmoji" caption="Gitmoji Emojis">
+<img src='/assets/blog/gitmoji-commit/gitmojis.png' alt="Popular Emojis From Gitmoji" />
 
 ## Using Gitmoji Commit
 
 Once the extension is installed it is easy to integrate into a normal workflow. When the time comes to make a commit open Gitmoji Commit through a keyboard shortcut or through the Command Palette. Since the keyboard shortcut needs to be setup manually lets walk through the Command Palette flow.
 
-<img src='/assets/blog/gitmoji-commit/extension.gif' alt="Use Gitmoji Commit in Microsoft Visual Studio Code" caption="Gitmoji Commit In VS Code" >
+<img src='/assets/blog/gitmoji-commit/extension.gif' alt="Use Gitmoji Commit In Microsoft VS Code" />
 
 1. Open the Command Palette with `Cmd/Ctl + Shift + P`
 2. Search for `Gitmoji Commit: Commit Message` and click on it

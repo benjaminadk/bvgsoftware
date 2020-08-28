@@ -11,7 +11,7 @@ author:
 
 Validating a user registration form sounds simple, does it not? We make sure that the email address provided is formed correctly, and that the password provided meets our desired criteria and we are all set. In my experience, I have found that coding these registration forms is more complex in practice.
 
-<img src='/assets/blog/react-form-validation-with-formik-graphql-yup/react-formik-error-1.gif' alt="Animated GIF of an email validation error message" caption="Email Validation Error">
+<img src='/assets/blog/react-form-validation-with-formik-graphql-yup/react-formik-error-1.gif' alt="Email Validation Error" />
 
 This is especially true when wiring up a full stack JavaScript application, in this case a [React](https://reactjs.org/docs/getting-started.html) application using an [Apollo Client](https://www.apollographql.com/), backed with an [Express](https://expressjs.com/) and [GraphQL Yoga](https://github.com/prisma/graphql-yoga) server.
 
@@ -230,7 +230,7 @@ Once the user enters valid input into a field that was displaying an error state
 
 Formik's design allows us to let Yup handle validation. To understand the big picture, it is probably best to see the form in action.
 
-<img src='/assets/blog/react-form-validation-with-formik-graphql-yup/react-formik-error-2.gif' alt="Animated GIF of an email validation error message" caption="Email Validation Error">
+<img src='/assets/blog/react-form-validation-with-formik-graphql-yup/react-formik-error-2.gif' alt="Email Validation Error" />
 
 This is my full component from an [OfferUp](https://offerup.com/) clone I made. I put a `setTimeout` on the `handleSubmit` function to illustate another built in feature of Formik called submission state. One of the callbacks available to Formik's `handleSubmit` option is `setSubmitting`. This is automatically set to `true` when `handleSubmit` is called, and corresponds to the `isSubmitting` prop that gets passed to the `InnerForm` UI.
 

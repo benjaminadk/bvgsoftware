@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.29",
+    "@fortawesome/free-brands-svg-icons": "5.14.0",
     "@fortawesome/free-solid-svg-icons": "5.13.1",
     "@fortawesome/react-fontawesome": "0.1.11",
     "@n8tb1t/use-scroll-position": "1.0.43",
@@ -38,6 +39,7 @@
     "remark-html": "10.0.0",
     "remark-parse": "8.0.2",
     "remark-rehype": "7.0.0",
+    "simple-react-lightbox": "3.3.4-1",
     "unified": "9.0.0",
     "unist-util-visit": "2.0.2"
   },

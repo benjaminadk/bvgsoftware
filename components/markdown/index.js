@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { SRLWrapper } from 'simple-react-lightbox'
 import cn from 'classnames'
 import copy from 'clipboard-copy'
 
@@ -22,12 +23,14 @@ export function Span({ children, ...rest }) {
   }
 }
 
-export function Img({ caption, ...rest }) {
+export function Img({ alt, ...rest }) {
   return (
-    <div className='flex flex-col items-center my-8'>
-      <img className='shadow-md' {...rest} />
-      {caption && <span className='text-gray-700 text-sm mt-1'>{caption}</span>}
-    </div>
+    <SRLWrapper>
+      <div className='flex flex-col items-center my-8 cursor-zoom-in'>
+        <img className='shadow-md' {...rest} alt={alt} />
+        {alt && <span className='text-gray-700 text-sm mt-1'>{alt}</span>}
+      </div>
+    </SRLWrapper>
   )
 }
 
