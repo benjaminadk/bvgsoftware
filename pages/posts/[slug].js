@@ -36,7 +36,10 @@ export default function Post({ post, morePosts }) {
                 <meta key='type' property='og:type' content='article' />
                 <meta property='og:title' content={post.title} />
                 <meta property='og:description' content={post.excerpt} />
-                <meta property='og:image' content={post.coverImage} />
+                <meta
+                  property='og:image'
+                  content={SITE.url + post.coverImage}
+                />
                 <meta property='og:image:type' content='image/jpeg' />
                 <meta property='og:image:width' content='2000' />
                 <meta property='og:image:height' content='1000' />
