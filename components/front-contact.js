@@ -8,6 +8,7 @@ import Button from './form-button'
 import { RECAPTCHA_KEY } from '../lib/constants'
 
 function FrontContact({
+  status,
   values,
   touched,
   errors,
@@ -17,10 +18,17 @@ function FrontContact({
 }) {
   const [show, setShow] = React.useState(false)
   const [disabled, setDisabled] = React.useState(true)
+  const [thanks, setThanks] = React.useState(false)
 
   React.useEffect(() => {
     setShow(Object.keys(touched).length)
   }, [touched])
+
+  React.useEffect(() => {
+    if (status === 'success' && !thanks) {
+      setThanks(true)
+    }
+  }, [status])
 
   return (
     <section className='bg-black py-20 mb-40'>
@@ -51,6 +59,12 @@ function FrontContact({
           />
         </div>
       </form>
+
+      {thanks && (
+        <h4 className='text-white text-center font-bold tracking-tighter leading-tight'>
+          Thank You For Reacting Out!
+        </h4>
+      )}
     </section>
   )
 }
@@ -58,14 +72,21 @@ function FrontContact({
 export default withFormik({
   mapPropsToValues: () => ({ name: '', email: '', message: '' }),
 
-  handleSubmit: async (values, { setSubmitting, resetForm }) => {
-    await axios({
+  handleSubmit: async (values, { setSubmitting, setStatus, resetForm }) => {
+    const success = await axios({
       method: 'POST',
       url: '/api/contact',
       data: {
         ...values
       }
     })
+
+    if (success) {
+      setStatus('success')
+    } else {
+      setStatus('error')
+    }
+
     setSubmitting(false)
     resetForm()
   },
