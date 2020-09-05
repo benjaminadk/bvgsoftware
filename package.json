@@ -41,7 +41,8 @@
     "remark-rehype": "7.0.0",
     "simple-react-lightbox": "3.3.4-1",
     "unified": "9.0.0",
-    "unist-util-visit": "2.0.2"
+    "unist-util-visit": "2.0.2",
+    "yup": "0.29.3"
   },
   "devDependencies": {
     "postcss-preset-env": "^6.7.0",

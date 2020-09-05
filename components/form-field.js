@@ -1,7 +1,7 @@
 import { useField } from 'formik'
 
 export default function FormField({ textarea, label, ...props }) {
-  const [field, meta, helpers] = useField(props)
+  const [field] = useField(props)
 
   return (
     <div className='flex flex-col mb-6'>
@@ -22,10 +22,6 @@ export default function FormField({ textarea, label, ...props }) {
           className='border-2 border-black text-lg p-1 rounded-none focus:bg-gray-100 focus:outline-none focus:border-link'
         />
       )}
-
-      {meta.touched && meta.error ? (
-        <div className='error'>{meta.error}</div>
-      ) : null}
     </div>
   )
 }

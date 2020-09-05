@@ -61,11 +61,11 @@ export default function Navigation({ isScrolled }) {
           </button>
         </div>
         <div
-          className={cn('w-full flex-grow lg:flex lg:items-center lg:w-auto', {
+          className={cn('w-full flex-grow lg:w-auto lg:flex lg:items-center', {
             hidden: !showMenu
           })}
         >
-          <ul className='text-sm lg:flex-grow'>
+          <ul className='text-xl flex flex-col text-center items-center mb-4 lg:text-sm lg:flex-grow lg:flex-row lg:text-left lg:mb-0'>
             {NAV_ITEMS.map((link) => (
               <li
                 key={link.slug}
@@ -82,7 +82,7 @@ export default function Navigation({ isScrolled }) {
               </li>
             ))}
           </ul>
-          <ul className='flex items-center'>
+          <ul className='flex items-center justify-center lg:justify-end'>
             {SOCIAL_MEDIA.map((el) => (
               <li key={el.name} className='mr-6 text-xl hover:text-link'>
                 <a href={el.url} target='_blank'>

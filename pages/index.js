@@ -16,7 +16,7 @@ export default function Index({ allPosts }) {
       <Layout>
         <FrontBanner />
         <FrontServices />
-        <FrontKlaviyo version='embed' />
+        <FrontKlaviyo />
         <Container>
           {recentPosts.length > 0 && <PostsRecent posts={recentPosts} />}
         </Container>

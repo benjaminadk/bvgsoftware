@@ -7,15 +7,7 @@ import FormField from './form-field'
 import Button from './form-button'
 import { RECAPTCHA_KEY } from '../lib/constants'
 
-function FrontContact({
-  status,
-  values,
-  touched,
-  errors,
-  handleChange,
-  handleBlur,
-  handleSubmit
-}) {
+function FrontContact({ status, touched, handleSubmit }) {
   const [show, setShow] = React.useState(false)
   const [disabled, setDisabled] = React.useState(true)
   const [thanks, setThanks] = React.useState(false)
