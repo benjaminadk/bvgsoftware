@@ -20,6 +20,7 @@ module.exports = {
         },
         link: '#ef3b7d',
         'link-hover': '#d3366f',
+        'link-light': '#FE7AAC',
         'inline-code': '#ffe7f0',
         copy: '#76d9e6'
       },
@@ -50,6 +51,7 @@ module.exports = {
         '7xl': '3.5rem',
         '8xl': '4.5rem',
         '9xl': '6.25rem',
+        subBanner: '110px',
         banner: '140px'
       },
       boxShadow: {

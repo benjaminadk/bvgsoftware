@@ -3,7 +3,7 @@ type: post
 title: 'How To Use Local Storage To Persist Data'
 excerpt: 'The browser comes equpped with a mechanism called the Web Storage API that can be used to store data in key/value pairs. Local Storage persists data even when the browser window is closed and reopened.'
 coverImage: '/assets/blog/how-to-use-local-storage-to-persist-data/cover.jpg'
-date: '2019-08-17T05:35:07.322Z'
+date: '2019-08-17'
 author:
   name: BVG Software
   picture: '/assets/blog/authors/bvg.jpg'
@@ -273,7 +273,7 @@ export default Picker
 
 The update UI should look like this.
 
-<img src='picker-1.png'/>
+<img src='/assets/blog/how-to-use-local-storage-to-persist-data/picker-1.png' alt="Color Picker" />
 
 ---
 
@@ -412,7 +412,7 @@ useEffect(() => {
 
 The first hook is only run when the app loads. It declares `defaultColors` which should look familiar. Then `localStorage.getItem` is called with the key `colors`. This asking Local Storage for the value associated with `colors`. Since all data within Local Storage is stored as a string we must wrap the request in `JSON.parse`. The logical OR is triggered when `null` is returned from Local Storage. `null` will be returned the first time the app runs and also if the `colors` key in Local Storage is cleared. Passing `[]` to `useEffect` means this hook will only run once. Check the Application tab of Chrome DevTools and then select Local Storage in the left hand column to see the contents. Each web page has its own separate storage area.
 
-<img src='picker-2.png' />
+<img src='/assets/blog/how-to-use-local-storage-to-persist-data/picker-2.png' alt='Local Storage' />
 
 The second hook fires any time the value of `colors` changes. In this case `localStorage.setItem` is called with the key as the first argument and the value for that key as the second argument. `JSON.stringify` is used here to ensure the data is stored correctly. The `window` object can be omitted since JavaScript automaticaly tries to find variables in this scope.
 

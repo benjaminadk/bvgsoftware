@@ -1,9 +1,9 @@
 ---
 type: 'post'
-title: 'How To Build A Command Line Application'
+title: 'How To Build A Command Line Application With Node'
 excerpt: 'JavaScript can be used for more than just manipulating the DOM in the browser. NodeJS can be used to build powerful command line applications. This article walks through a beginner level project.'
 coverImage: '/assets/blog/how-to-build-a-command-line-application/cover.jpg'
-date: '2020-01-25T05:35:07.322Z'
+date: '2020-01-25'
 author:
   name: 'BVG Software'
   picture: '/assets/blog/authors/bvg.jpg'

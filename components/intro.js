@@ -4,8 +4,9 @@ export default function Intro() {
       <h1 className='text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8'>
         Blog
       </h1>
-      <h4 className='text-center md:text-left text-lg mt-5 md:pl-8'>
-        Learn to code. No, it is not too late.
+      <h4 className='text-center font-semibold md:text-left text-lg mt-5 md:pl-8'>
+        Learn to code. It's <strong className='text-link'>NEVER</strong> too
+        late.
       </h4>
     </section>
   )

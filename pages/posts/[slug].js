@@ -65,6 +65,7 @@ export default function Post({ post, morePosts }) {
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
+                readTime={post.readTime}
               />
               <PostBody post={post} />
             </article>
@@ -85,7 +86,8 @@ export async function getStaticProps({ params }) {
     'excerpt',
     'content',
     'coverImage',
-    'video'
+    'video',
+    'readTime'
   ])
 
   return {

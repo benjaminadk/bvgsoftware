@@ -177,9 +177,15 @@ export default function FrontBanner() {
 
   return (
     <div id='canvas-wrapper' className='bg-black'>
-      <h1 className='bvg-software text-3xl sm:text-banner tracking-in-expand'>
-        BVG Software
+      <h1>
+        <span className='bvg-software text-3xl sm:text-banner tracking-in-expand'>
+          BVG Software
+        </span>
+        <span className='solutions text-link-light text-2xl sm:text-subBanner tracking-in-contract-bck-bottom'>
+          Solutions
+        </span>
       </h1>
+
       <canvas ref={canvas} className='md:block hidden' />
     </div>
   )

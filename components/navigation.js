@@ -65,12 +65,12 @@ export default function Navigation({ isScrolled }) {
             hidden: !showMenu
           })}
         >
-          <ul className='text-xl flex flex-col text-center items-center mb-4 lg:text-sm lg:flex-grow lg:flex-row lg:text-left lg:mb-0'>
+          <ul className='text-xl flex flex-col text-center items-center mb-4 lg:text-base lg:flex-grow lg:flex-row lg:text-left lg:mb-0'>
             {NAV_ITEMS.map((link) => (
               <li
                 key={link.slug}
                 className={cn(
-                  'block mt-4 lg:inline-block lg:mt-0 text-black hover:text-link font-bold mr-4 cursor-pointer duration-200 transition-colors',
+                  'block mt-4 text-black hover:text-link font-bold mr-4 cursor-pointer duration-200 transition-colors lg:inline-block lg:mt-0 lg:pr-4',
                   {
                     'text-link': router.pathname.includes(`/${link.slug}`),
                     'text-black': !router.pathname.includes(`/${link.slug}`)

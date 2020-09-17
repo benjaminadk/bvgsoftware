@@ -58,7 +58,21 @@
   </url>
   <url>
     <loc
+      >https://bvgsoftware.com/posts/react-contact-form-with-klaviyo-and-formik</loc
+    >
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc
       >https://bvgsoftware.com/posts/react-form-validation-with-formik-graphql-yup</loc
+    >
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc
+      >https://bvgsoftware.com/posts/react-markdown-blog-read-time-feature</loc
     >
     <changefreq>always</changefreq>
     <priority>1.0</priority>

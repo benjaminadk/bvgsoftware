@@ -1,9 +1,9 @@
 ---
 type: 'post'
-title: 'SVG Icons With No Artistic Ablility'
-excerpt: 'Are you sick of the same old icons you have been using in your projects lately? Do you lack the artistic ability to draw a stick figure? If you answered yes, or even if you answered no, please continue reading.'
+title: 'React SVG Icons With No Artistic Ablility'
+excerpt: 'Are you sick of the same old icons you have been using in your projects lately? Use React to create simple and reusable components. No artistic ability required.'
 coverImage: '/assets/blog/svg-icon-with-no-artistic-ability/cover.jpg'
-date: '2019-07-10T05:35:07.322Z'
+date: '2019-07-10'
 author:
   name: BVG Software
   picture: '/assets/blog/authors/bvg.jpg'

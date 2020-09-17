@@ -3,7 +3,7 @@ type: 'post'
 title: 'Save Development Time With AutoHotKey'
 excerpt: 'As developers, we often find ourselves creating forms that require user input. Learn how to save valuable time by use AutoHotKey in your testing and validation process.'
 coverImage: '/assets/blog/autohotkey-to-save-development-time/cover.jpg'
-date: '2019-08-02T05:35:07.322Z'
+date: '2019-08-02'
 author:
   name: BVG Software
   picture: '/assets/blog/authors/bvg.jpg'

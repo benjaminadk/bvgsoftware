@@ -68,3 +68,11 @@ export function Pre(props) {
     </pre>
   )
 }
+
+export function Blockquote(props) {
+  return (
+    <blockquote className='border-l-8 border-link bg-inline-code py-2 mx-6'>
+      <span className='px-4 italic'>{props.children[1].props.children}</span>
+    </blockquote>
+  )
+}

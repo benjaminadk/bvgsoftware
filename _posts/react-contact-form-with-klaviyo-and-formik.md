@@ -1,7 +1,7 @@
 ---
 type: 'post'
 title: 'React Contact Form With Klaviyo & Formik'
-excerpt: 'Learn how to create a simple Contact Form with NextJS, Klaviyo, and Formik. A simple solution to form handling in React applications.'
+excerpt: 'Learn how to create a simple React Contact Form with NextJS, Klaviyo, and Formik. Email message directly to yourself for free without having to build a server.'
 coverImage: '/assets/blog/react-contact-form-with-klaviyo-and-formik/cover.jpg'
 date: '2020-08-30'
 author:

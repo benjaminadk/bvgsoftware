@@ -3,7 +3,7 @@ type: post
 title: 'How To Create GIFs With NodeJS'
 excerpt: 'When you want to convey as message, but an image is too simplistic and a video is too complex, a GIF can be the perfect middle ground. Learn how to create your own GIFs with NodeJS.'
 coverImage: '/assets/blog/how-to-create-gifs-with-node-js/cover.jpg'
-date: '2019-08-24T05:35:07.322Z'
+date: '2019-08-24'
 author:
   name: BVG Software
   picture: '/assets/blog/authors/bvg.jpg'

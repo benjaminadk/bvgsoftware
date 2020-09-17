@@ -38,12 +38,23 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  /* font-size: 140px; */
   font-weight: 700;
   color: #ffffff;
   transform: translate(-50%, -50%);
   user-select: none;
   white-space: nowrap;
+}
+
+.solutions {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  font-weight: 700;
+  color: #ffffff;
+  transform: translate(-45%, -50%);
+  user-select: none;
+  white-space: nowrap;
+  margin-top: 20px;
 }
 
 /* Minesweeper frame */
@@ -298,6 +309,9 @@ code.language-markup .token.script .token.keyword {
   color: #76d9e6;
 }
 
+/* Animations */
+
+/* Tracking In Expand */
 .tracking-in-expand {
   -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.61, 0.355, 1)
     1s both;
@@ -316,6 +330,7 @@ code.language-markup .token.script .token.keyword {
     opacity: 1;
   }
 }
+
 @keyframes tracking-in-expand {
   0% {
     letter-spacing: -0.5em;
@@ -325,6 +340,47 @@ code.language-markup .token.script .token.keyword {
     opacity: 0.6;
   }
   100% {
+    opacity: 1;
+  }
+}
+
+/* Tracking In Contract Back Bottom */
+.tracking-in-contract-bck-bottom {
+  -webkit-animation: tracking-in-contract-bck-bottom 2s
+    cubic-bezier(0.215, 0.61, 0.355, 1) 2s both;
+  animation: tracking-in-contract-bck-bottom 2s
+    cubic-bezier(0.215, 0.61, 0.355, 1) 2s both;
+}
+
+@-webkit-keyframes tracking-in-contract-bck-bottom {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px) translateY(300px);
+    transform: translateZ(400px) translateY(300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract-bck-bottom {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px) translateY(300px);
+    transform: translateZ(400px) translateY(300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
     opacity: 1;
   }
 }
