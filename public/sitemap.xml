@@ -72,6 +72,13 @@
   </url>
   <url>
     <loc
+      >https://bvgsoftware.com/posts/react-infinite-scroll-for-ecommerce-with-nextjs</loc
+    >
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc
       >https://bvgsoftware.com/posts/react-markdown-blog-read-time-feature</loc
     >
     <changefreq>always</changefreq>
