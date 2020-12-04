@@ -9,7 +9,7 @@ author:
   picture: '/assets/blog/authors/bvg.jpg'
 ---
 
-## Intro
+## Introduction
 
 I just added a new Read Time Feature to this blog. I started with a Google search:
 

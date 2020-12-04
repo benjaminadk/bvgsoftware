@@ -9,6 +9,8 @@ author:
   picture: '/assets/blog/authors/bvg.jpg'
 ---
 
+## Introduction
+
 When you want to convey as message, but an image is too simplistic and a video is too complex, a GIF can be the perfect middle ground. As a JavaScript developer, I wondered...
 
 - Could GIFs be created with JavaScript?

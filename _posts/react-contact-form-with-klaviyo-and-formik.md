@@ -9,7 +9,7 @@ author:
   picture: '/assets/blog/authors/bvg.jpg'
 ---
 
-## Intro
+## Introduction
 
 [Klaviyo](https://www.klaviyo.com/) is generally known as a platform to help websites gather contacts and deliver marketing emails. It is certainly a powerful tool, complete with deep analytics, many eccommerce integrations, and great design tools.
 

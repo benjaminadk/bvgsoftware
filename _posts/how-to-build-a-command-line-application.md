@@ -13,9 +13,9 @@ video:
   duration: 'PT3M54S'
 ---
 
-JavaScript can be used for more than just manipulating the DOM in the browser. NodeJS can be used to build powerful command line applications. Over recent months I have developed my own CLI to speed up repetitive tasks at work. The project we build in this article is a small portion of that larger application and will do a lot more than output "Hello World" to your console.
+## Introduction
 
-## Overview
+JavaScript can be used for more than just manipulating the DOM in the browser. NodeJS can be used to build powerful command line applications. Over recent months I have developed my own CLI to speed up repetitive tasks at work. The project we build in this article is a small portion of that larger application and will do a lot more than output "Hello World" to your console.
 
 Short video explaining the project and showing it in action
 

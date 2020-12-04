@@ -9,6 +9,8 @@ author:
   picture: '/assets/blog/authors/bvg.jpg'
 ---
 
+## Introduction
+
 Validating a user registration form sounds simple, does it not? We make sure that the email address provided is formed correctly, and that the password provided meets our desired criteria and we are all set. In my experience, I have found that coding these registration forms is more complex in practice.
 
 <img src='/assets/blog/react-form-validation-with-formik-graphql-yup/react-formik-error-1.gif' alt="Email Validation Error" />

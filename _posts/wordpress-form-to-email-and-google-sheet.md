@@ -9,7 +9,7 @@ author:
   picture: '/assets/blog/authors/bvg.jpg'
 ---
 
-## Intro
+## Introduction
 
 So you have your cool WordPress theme and need some kind of form system to collect data and lend a sense of interactivity to the site. Perhaps all you need is a simple contact form that collects an email and a message. Perhaps you need a six section registration form that collects a name, address, phone number, insurance information, job history, emergencies contacts - the list can go on and on.
 
