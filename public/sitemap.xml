@@ -6,11 +6,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://bvgsoftware.com/posts/covid-19-deaths-by-age-group</loc>
-    <changefreq>always</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc
       >https://bvgsoftware.com/posts/covid-19-pandemic-timelapse-choropleth</loc
     >
@@ -66,13 +61,6 @@
   <url>
     <loc
       >https://bvgsoftware.com/posts/react-form-validation-with-formik-graphql-yup</loc
-    >
-    <changefreq>always</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc
-      >https://bvgsoftware.com/posts/react-infinite-scroll-for-ecommerce-with-nextjs</loc
     >
     <changefreq>always</changefreq>
     <priority>1.0</priority>

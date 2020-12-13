@@ -1,11 +1,13 @@
+import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import cn from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function PostArchive({ posts }) {
-  const [post, setPost] = React.useState(true)
-  const [project, setProject] = React.useState(true)
-  const [visualization, setVisualization] = React.useState(true)
+  const [post, setPost] = useState(true)
+  const [project, setProject] = useState(true)
+  const [visualization, setVisualization] = useState(true)
 
   return (
     <section id='archive' className='mb-8'>
@@ -58,15 +60,18 @@ export default function PostArchive({ posts }) {
                   'opacity-25 pointer-events-none':
                     (type === 'post' && !post) ||
                     (type === 'project' && !project) ||
-                    (type === 'visualization' && !visualization)
+                    (type === 'visualization' && !visualization),
                 }
               )}
             >
-              <img
-                className='shadow-md hover:shadow-lg'
-                src={coverImage}
-                alt={title}
-              />
+              <div className='flex shadow-md hover:shadow-lg mb-2'>
+                <Image
+                  src={coverImage.replace('cover', 'cover-thumb')}
+                  alt={title}
+                  width={300}
+                  height={150}
+                />
+              </div>
               <h3 className='text-center font-semibold'>{title}</h3>
             </div>
           </Link>

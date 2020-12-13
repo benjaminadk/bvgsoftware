@@ -1,7 +1,9 @@
-export default function FrontBanner() {
-  const canvas = React.useRef()
+import React, { useRef, useEffect } from 'react'
 
-  React.useEffect(() => {
+export default function FrontBanner() {
+  const canvas = useRef()
+
+  useEffect(() => {
     if (window.innerWidth < 768) {
       return
     }
@@ -12,14 +14,14 @@ export default function FrontBanner() {
       particleNumber: 200,
       maxParticleSize: 10,
       maxSpeed: 50,
-      colorVariation: 20
+      colorVariation: 20,
     }
     const colorPalette = {
       bg: { r: 0, g: 0, b: 0 },
       matter: [
         { r: 239, g: 59, b: 125 },
-        { r: 230, g: 230, b: 230 }
-      ]
+        { r: 230, g: 230, b: 230 },
+      ],
     }
     var particles = []
 
@@ -149,7 +151,7 @@ export default function FrontBanner() {
         bubbles: true,
         cancelable: true,
         clientX: x,
-        clientY: y
+        clientY: y,
       })
 
       var el = document.elementFromPoint(x, y)
@@ -164,11 +166,15 @@ export default function FrontBanner() {
       )
     }
 
-    var interval = setInterval(randomPop, 1000)
+    var interval
+
+    setTimeout(() => {
+      interval = setInterval(randomPop, 2000)
+    }, 2000)
 
     setTimeout(() => {
       clearInterval(interval)
-    }, 20000)
+    }, 10000)
 
     return () => {
       clearInterval(interval)

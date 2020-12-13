@@ -1,13 +1,14 @@
+import React, { useRef, useEffect, useState } from 'react'
 import { Runtime, Inspector } from '@observablehq/runtime'
 import notebook from './high-school-clock/file1'
 
 export default function HighSchoolClock() {
-  const slider = React.useRef()
-  const clock = React.useRef()
+  const slider = useRef()
+  const clock = useRef()
 
-  const [size, setSize] = React.useState(400)
+  const [size, setSize] = useState(400)
 
-  React.useEffect(() => {
+  useEffect(() => {
     const runtime = new Runtime()
     runtime.module(notebook, (name) => {
       console.log(name)
@@ -18,13 +19,13 @@ export default function HighSchoolClock() {
         return {
           fulfilled: (value) => {
             slider.current = value
-          }
+          },
         }
       }
     })
   }, [])
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (slider.current) {
       slider.current.value = size
     }

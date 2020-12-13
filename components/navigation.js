@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import cn from 'classnames'
@@ -8,7 +9,8 @@ import { SOCIAL_MEDIA, NAV_ITEMS } from '../lib/constants'
 
 export default function Navigation({ isScrolled }) {
   const router = useRouter()
-  const [showMenu, setShowMenu] = React.useState(false)
+
+  const [showMenu, setShowMenu] = useState(false)
 
   return (
     <nav
@@ -16,7 +18,7 @@ export default function Navigation({ isScrolled }) {
         'fixed inset-x-0 z-10 bg-white p-6 transition-all duration-500',
         {
           'top-0 shadow-md': isScrolled,
-          'top-35': !isScrolled
+          'top-35': !isScrolled,
         }
       )}
     >
@@ -62,7 +64,7 @@ export default function Navigation({ isScrolled }) {
         </div>
         <div
           className={cn('w-full flex-grow lg:w-auto lg:flex lg:items-center', {
-            hidden: !showMenu
+            hidden: !showMenu,
           })}
         >
           <ul className='text-xl flex flex-col text-center items-center mb-4 lg:text-base lg:flex-grow lg:flex-row lg:text-left lg:mb-0'>
@@ -73,7 +75,7 @@ export default function Navigation({ isScrolled }) {
                   'block mt-4 text-black hover:text-link font-bold mr-4 cursor-pointer duration-200 transition-colors lg:inline-block lg:mt-0 lg:pr-4',
                   {
                     'text-link': router.pathname.includes(`/${link.slug}`),
-                    'text-black': !router.pathname.includes(`/${link.slug}`)
+                    'text-black': !router.pathname.includes(`/${link.slug}`),
                   }
                 )}
                 onClick={() => router.push(`/${link.slug}`)}

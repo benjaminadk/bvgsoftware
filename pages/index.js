@@ -33,10 +33,10 @@ export async function getStaticProps() {
     'slug',
     'author',
     'coverImage',
-    'excerpt'
+    'excerpt',
   ])
 
   return {
-    props: { allPosts }
+    props: { allPosts },
   }
 }

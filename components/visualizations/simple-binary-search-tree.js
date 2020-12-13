@@ -1,19 +1,20 @@
+import React, { useRef, useEffect } from 'react'
 import { Runtime, Inspector } from '@observablehq/runtime'
 import notebook from './simple-binary-search-tree/file1'
 
 export default function SimpleBinarySearchTree() {
-  const reset1 = React.useRef()
-  const searchFor1 = React.useRef()
-  const linear1 = React.useRef()
-  const binary1 = React.useRef()
-  const tree1 = React.useRef()
-  const reset2 = React.useRef()
-  const searchFor2 = React.useRef()
-  const linear2 = React.useRef()
-  const binary2 = React.useRef()
-  const tree2 = React.useRef()
+  const reset1 = useRef()
+  const searchFor1 = useRef()
+  const linear1 = useRef()
+  const binary1 = useRef()
+  const tree1 = useRef()
+  const reset2 = useRef()
+  const searchFor2 = useRef()
+  const linear2 = useRef()
+  const binary2 = useRef()
+  const tree2 = useRef()
 
-  React.useEffect(() => {
+  useEffect(() => {
     const runtime = new Runtime()
 
     runtime.module(notebook, (name) => {

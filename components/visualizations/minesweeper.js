@@ -1,13 +1,14 @@
+import React, { useRef, useEffect } from 'react'
 import { Runtime, Inspector } from '@observablehq/runtime'
 import notebook from './minesweeper/file1'
 
 export default function Minesweeper() {
-  const level = React.useRef()
-  const minesweeper = React.useRef()
-  const pattern = React.useRef()
-  const style = React.useRef()
+  const level = useRef()
+  const minesweeper = useRef()
+  const pattern = useRef()
+  const style = useRef()
 
-  React.useEffect(() => {
+  useEffect(() => {
     const runtime = new Runtime()
 
     runtime.module(notebook, (name) => {

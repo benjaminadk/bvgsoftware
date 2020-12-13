@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 import Alert from '../components/alert'
@@ -6,7 +7,7 @@ import Footer from '../components/footer'
 import Meta from '../components/meta'
 
 export default function Layout({ children }) {
-  const [isScrolled, setIsScrolled] = React.useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useScrollPosition(
     ({ prevPos, currPos }) => {

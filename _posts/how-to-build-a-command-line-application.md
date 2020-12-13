@@ -1,7 +1,7 @@
 ---
 type: 'post'
 title: 'How To Build A Command Line Application With Node'
-excerpt: 'JavaScript can be used for more than just manipulating the DOM in the browser. NodeJS can be used to build powerful command line applications. This article walks through a beginner level project.'
+excerpt: 'Build a beginner Node CLI app. JavaScript can be used for more than just manipulating the DOM in the browser. NodeJS can be used to build powerful command line applications.'
 coverImage: '/assets/blog/how-to-build-a-command-line-application/cover.jpg'
 date: '2020-01-25'
 author:
@@ -13,17 +13,19 @@ video:
   duration: 'PT3M54S'
 ---
 
-JavaScript can be used for more than just manipulating the DOM in the browser. NodeJS can be used to build powerful command line applications. Over recent months I have developed my own CLI to speed up repetitive tasks at work. The project we build in this article is a small portion of that larger application and will do a lot more than output "Hello World" to your console.
+## Introduction
 
-## Overview
+JavaScript can be used for more than just manipulating the DOM in the browser. NodeJS can be used to build powerful command line applications. Over recent months I have developed my own Node CLI application to speed up repetitive tasks at work. The project we build in this article is a small portion of that larger application and will do a lot more than output "Hello World" to your console.
 
-Short video explaining the project and showing it in action
+## Video Overview
+
+Short video explaining this Node CLI project and showing the application in action
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Mjzr1jwlaCQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Getting Started
 
-[Project Source Code](https://github.com/benjaminadk/node-cli-tutorial)
+[Download Project Source Code Here](https://github.com/benjaminadk/node-cli-tutorial)
 
 [Download NodeJS](https://nodejs.org/en/) if you don't already have it installed locally.
 
@@ -45,7 +47,7 @@ git clone https://github.com/benjaminadk/node-cli-tutorial.git
 
 ### Option 2 - Build From Scratch
 
-If you want to code along with me and build from scratch just continue reading. When I follow tutorials I usually have this approach.
+If you want to code along with me and build from scratch just continue reading. When I follow tutorials I usually take this approach.
 
 Create a folder for the project.
 
@@ -65,11 +67,13 @@ If any of the instructions above were unfamiliar, or didn't work, you may want t
 
 <img src="/assets/blog/how-to-build-a-command-line-application/command-line-app.gif" alt="Bash Commands To Initialize Project" />
 
-I suppose now would be a good time to let everyone know what this application is actually going to do.
+## Our Node CLI Application
 
-We are going to make thumbnail images! More specifically, we will be able to navigate to a directory of full sized images and invoke our command. This will create a new directory full of thumbnails with a size we determine. In this use case we will be making 225x190 pixel thumbnails from 800x800 textile images and saving them as 40% quality JPEGs. We will use a library named [Jimp](https://github.com/oliver-moran/jimp) for image manipulation as well as [Commander](https://github.com/tj/commander.js) and [rimraf](https://github.com/isaacs/rimraf). Commander is a framework for command line application and rimraf is a file system utility.
+I suppose now would be a good time to let you know what this Node command line application is actually going to do.
 
-Make sure you are in the project directory aka the same level as `package.json` when running the following command.
+We are going to make thumbnail images! More specifically, we will be able to navigate to a directory of full sized images and invoke our command. This will create a new directory full of thumbnails with a size we determine. In this use case we will be making 225x190 pixel thumbnails from 800x800 images and saving them as 40% quality JPEGs. We will use a library named [Jimp](https://github.com/oliver-moran/jimp) to help with image manipulation. [Commander](https://github.com/tj/commander.js) will be used as a framework for this command line application.
+
+Make sure you are in the project directory, or the same level as `package.json` when running the following command.
 
 ```bash
 npm install jimp commander rimraf
@@ -93,13 +97,15 @@ Just kidding. This is just to make sure Node is working. I try to write tutorial
 node ./index.js
 ```
 
-Quick tip. `index.js` is recognized as a sort of default filename in Node. The following works as well.
+Quick tip. `index.js` is recognized as a sort of default filename in Node. The following works as well, as Node will automatically look for `index.js` when execute in a directory.
 
 ```bash
 node .
 ```
 
 You should see `Hello World` output in the terminal.
+
+### How To Make Our App Available From CLI
 
 The code above passes a relative filepath to the `node` command. Since the goal of this exercise is to make a command line tool, we need to make some modifications to be able to type a command anywhere on our computer and have our code execute.
 
@@ -187,6 +193,8 @@ program
   .parse(process.argv)
 ```
 
+### Coding Our Node CLI App
+
 Commander is a great framework which helps to set up options and produces help menus automatically. Here I am assigning a version, name and description, as well as some options. Finally, we are parsing `process.argv`. These are the arguments provided to the command. With just this code we already have a working command line tool.
 
 ```bash
@@ -199,7 +207,7 @@ Output for our `help` command.
 
 The options allow us to input a path to a directory of source images and a path to the directory we want to save the new thumbnails in. These are relative to the current working directory and not absolute paths. Relative paths make sense because the nature of a command line application is that is portable. Relative paths are also shorter to type. These options will be passed into our underlying image manipulation logic.
 
-I want to create a separate folder and file to hold some of this logic to keep things organized.
+Create a separate folder and file to hold some of this logic to keep things organized.
 
 ```bash
 mkdir lib
@@ -238,7 +246,7 @@ module.exports = {
   directoryExists,
   readdir,
   mkdir,
-  rm
+  rm,
 }
 ```
 

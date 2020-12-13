@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SRLWrapper } from 'simple-react-lightbox'
 import cn from 'classnames'
@@ -45,7 +46,7 @@ export function Iframe(props) {
 export function Pre(props) {
   const code = React.useRef()
 
-  const [copied, setCopied] = React.useState(false)
+  const [copied, setCopied] = useState(false)
 
   function onClick() {
     copy(code.current.textContent)
@@ -71,8 +72,10 @@ export function Pre(props) {
 
 export function Blockquote(props) {
   return (
-    <blockquote className='border-l-8 border-link bg-inline-code py-2 mx-6'>
-      <span className='px-4 italic'>{props.children[1].props.children}</span>
+    <blockquote className='border-l-8 border-link bg-inline-code py-2 mx-0 md:mx-6'>
+      <span className='block px-4 italic'>
+        {props.children[1].props.children}
+      </span>
     </blockquote>
   )
 }

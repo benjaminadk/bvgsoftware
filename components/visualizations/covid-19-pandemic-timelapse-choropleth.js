@@ -1,15 +1,16 @@
+import React, { useRef, useEffect } from 'react'
 import { Runtime, Inspector } from '@observablehq/runtime'
 import notebook from './covid-19-pandemic-timelapse-choropleth/file1'
 
 export default function Covid19PandemicTimelapseChoropleth() {
-  const currentDate = React.useRef()
-  const totalCases = React.useRef()
-  const button1 = React.useRef()
-  const button2 = React.useRef()
-  const chart = React.useRef()
-  const loop = React.useRef()
+  const currentDate = useRef()
+  const totalCases = useRef()
+  const button1 = useRef()
+  const button2 = useRef()
+  const chart = useRef()
+  const loop = useRef()
 
-  React.useEffect(() => {
+  useEffect(() => {
     const runtime = new Runtime()
 
     runtime.module(notebook, (name) => {

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react'
 import { withFormik } from 'formik'
 import axios from 'axios'
 import ReCAPTCHA from 'react-google-recaptcha'
@@ -8,22 +9,22 @@ import Button from './form-button'
 import { RECAPTCHA_KEY } from '../lib/constants'
 
 function FrontContact({ status, touched, handleSubmit }) {
-  const [show, setShow] = React.useState(false)
-  const [disabled, setDisabled] = React.useState(true)
-  const [thanks, setThanks] = React.useState(false)
+  const [show, setShow] = useState(false)
+  const [disabled, setDisabled] = useState(true)
+  const [thanks, setThanks] = useState(false)
 
-  React.useEffect(() => {
+  useEffect(() => {
     setShow(Object.keys(touched).length)
   }, [touched])
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (status === 'success' && !thanks) {
       setThanks(true)
     }
   }, [status])
 
   return (
-    <section className='bg-black py-20 mb-40'>
+    <section className='bg-black py-20'>
       <h2 className='mb-8 lg:text-8xl text-7xl text-white text-center font-bold tracking-tighter leading-tight'>
         Contact Us
       </h2>
@@ -35,7 +36,7 @@ function FrontContact({ status, touched, handleSubmit }) {
           <FormField textarea name='message' label='Message' required />
           <div
             className={cn('flex justify-center', {
-              hidden: !show
+              hidden: !show,
             })}
           >
             <ReCAPTCHA
@@ -69,8 +70,8 @@ export default withFormik({
       method: 'POST',
       url: '/api/contact',
       data: {
-        ...values
-      }
+        ...values,
+      },
     })
 
     if (success) {
@@ -83,5 +84,5 @@ export default withFormik({
     resetForm()
   },
 
-  displayName: 'FrontContact'
+  displayName: 'FrontContact',
 })(FrontContact)
