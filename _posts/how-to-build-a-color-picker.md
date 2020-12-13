@@ -9,6 +9,8 @@ author:
   picture: '/assets/blog/authors/bvg.jpg'
 ---
 
+## Introduction
+
 Building a color picker was one of the first projects I tried once I knew how to string together a couple lines of JavaScript. They were total abombinations if my memory serves me correctly. Recently, I decided to see what my current skills could produce.
 
 This article will cover the step by step process. The target audience for the article probably has some experience with React, but by no means does it require expert ability. I will do by best to keep a slow pace and explain the thinking behind component composition and how the pieces fit together.

@@ -9,6 +9,8 @@ author:
   picture: '/assets/blog/authors/bvg.jpg'
 ---
 
+## Introduction
+
 The browser comes equipped with a mechanism called the [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) that can be used to store data in key/value pairs. Session Storage persists data for the current session, which ends when the browser tab closes. Local Storage, on the other hand, persists data even if the browser is closed and reopened. Both of these storage interfaces can be manipulated with JavaScript and can be used in web applications. To illustrate Local Storage in action this article will walk through the process of adding a saved colors feature to the color picker from [How To Build A Color Picker](). The project is built using [Code Sandbox](https://codesandbox.io/) so don't worry if you haven't read the previous article. I created a new fork of the original sandbox as a jump-off point for this article.
 
 Here is the starting point for this article:
