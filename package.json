@@ -16,7 +16,7 @@
     "@fortawesome/react-fontawesome": "0.1.11",
     "@n8tb1t/use-scroll-position": "1.0.43",
     "@observablehq/runtime": "4.7.1",
-    "axios": "0.19.2",
+    "axios": "0.21.1",
     "classnames": "2.2.6",
     "clipboard-copy": "3.1.0",
     "cors": "2.8.5",
